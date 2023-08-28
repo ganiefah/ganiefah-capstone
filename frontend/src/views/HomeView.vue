@@ -1,8 +1,11 @@
 <template>
   <div class="home">
    <div class="bg">
-    <h1><span>SONIC</span> VINYLS</h1>
+    <h1>SONIC VINYLS</h1>
+    <h2>"Unleash the Soundtrack of Time: <br>
+      Sonic Vinyls, Where Music Lives."</h2>
    </div>
+   <h3 class="featured">Featured Products: </h3>
   </div>
 </template>
 
@@ -14,7 +17,7 @@
 
 <style scoped>
 .home{
-  height: 200vh;
+  height: 150vh;
 }
 
 .bg{
@@ -32,5 +35,17 @@ h1{
   margin-left: 3rem ;
 }
 
+h2{
+  color: white;
+  float: right;
+  margin-top: 25rem;
+  margin-right: 3rem;
+}
+
+.featured{
+  color: black;
+  text-align: center;
+  padding: 1rem;
+}
 
 </style>
