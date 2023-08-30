@@ -69,7 +69,8 @@ async register(req, res) {
   async login(req, res) {
     const { emailAdd, userPass } = req.body;
     const query = `
-            SELECT userID, firstName, surName, userAge, Gender, userRole, emailAdd, userPass, profileURL  FROM Users
+            SELECT userID, firstName, surName, userAge, Gender, userRole, emailAdd, userPass, profileURL 
+            FROM Users
             WHERE emailAdd = ?
         `;
     db.query(query, [emailAdd], async (err, result) => {

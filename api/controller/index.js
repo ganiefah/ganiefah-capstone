@@ -8,10 +8,10 @@ const { users, products } = require("../model");
 routes.get("/users", (req, res) => {
   users.fetchUsers(req, res);
 });
-routes.get("/user/:userID", (req, res) => {
+routes.get("/user/:id", (req, res) => {
   users.fetchUser(req, res);
 });
-routes.patch("/user/:userID", bodyParser.json(), (req, res) => [
+routes.patch("/user/:id", bodyParser.json(), (req, res) => [
   users.updateUser(req, res),
 ]);
 routes.post("/register", bodyParser.json(), (req, res) => {
@@ -20,7 +20,7 @@ routes.post("/register", bodyParser.json(), (req, res) => {
 routes.post("/login", bodyParser.json(), (req, res) => {
   users.login(req, res);
 });
-routes.delete("/user/:userID", (req, res) => {
+routes.delete("/user/:id", (req, res) => {
   users.removeUser(req, res);
 });
 
