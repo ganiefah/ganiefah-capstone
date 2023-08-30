@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const { verifyAToken } = require("../middleware/AuthenticateUser");
 const routes = express.Router();
-const { users, products } = require("../model");
+const { users, products, orders } = require("../model");
 
 // ========== User routes ==========
 routes.get("/users", (req, res) => {
@@ -38,9 +38,6 @@ exports.profile = (req, res, next) => {
   }
   res.json({ message: "User profile retrieved successfully" });
 };
-
-module.exports = { express, routes };
-
 // ========== Product routes ===========
 routes.get("/products", (req, res) => {
   products.fetchProducts(req, res);
@@ -57,3 +54,24 @@ routes.patch("/product/:prodID", bodyParser.json(), (req, res) => {
 routes.delete("/product/:prodID", (req, res) => {
   products.deleteProduct(req, res);
 });
+
+// ============ Orders' router ==============
+routes.get("/orders", (req, res) => {
+  orders.fetchOrders(req, res);
+});
+routes.get("/order/:id", (req, res) => {
+  orders.fetchOrder(req, res);
+});
+routes.post("/addOrder/:orderID//:userID/:prodID", bodyParser.json(), (req, res)=>{
+  orders.insertOrder(req, res)
+})
+routes.put("/order/:orderID", bodyParser.json(), (req, res) => {
+  orders.updateOrder(req, res);
+});
+routes.delete("/order/:orderID", (req, res)=>{
+  orders.removeOrder(req, res)
+})
+
+module.exports = { express, routes };
+
+
