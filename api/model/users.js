@@ -4,7 +4,7 @@ const { createToken } = require("../middleware/AuthenticateUser");
 class Users {
   fetchUsers(req, res) {
     const query = `
-            SELECT userID, firstName, lastName, userAge, Gender, userRole, emailAdd, userProfile FROM Users;
+            SELECT userID, firstName, surName, userAge, Gender, userRole, emailAdd, userPass, profileURL FROM Users;
         `;
     db.query(query, (err, results) => {
       if (!err) {
@@ -22,7 +22,7 @@ class Users {
   }
   fetchUser(req, res) {
     const query = `
-        SELECT userID, firstName, lastName, userAge, gender, userRole, emailAdd, userProfile FROM Users WHERE userID = ${req.params.id}
+        SELECT userID, firstName, surName, userAge, Gender, userRole, emailAdd, userPass, profileURL FROM Users WHERE userID = ${req.params.id}
         `;
     db.query(query, (err, result) => {
       if (!err) {
@@ -38,7 +38,8 @@ class Users {
       }
     });
   }
-  async register(req, res) {
+  users 
+async register(req, res) {
     const data = req.body;
     data.userPass = await hash(data.userPass, 16);
     const user = {
@@ -68,9 +69,7 @@ class Users {
   async login(req, res) {
     const { emailAdd, userPass } = req.body;
     const query = `
-            SELECT firstName, lastName,
-            userAge, gender, userRole, emailAdd,
-            userPass, userProfile FROM Users
+            SELECT userID, firstName, surName, userAge, Gender, userRole, emailAdd, userPass, profileURL  FROM Users
             WHERE emailAdd = ?
         `;
     db.query(query, [emailAdd], async (err, result) => {
@@ -86,17 +85,17 @@ class Users {
           msg: "You are providing the wrong email or password.",
         });
       } else {
-        await compare(userPass, result[0].userPass, (cErr, cResult) => {
-          if (cErr) throw cErr;
+        await compare(userPass, result[0].userPass, (err, Result) => {
+          if (err) throw err;
           const token = createToken({
             emailAdd,
             userPass,
           });
-          if (cResult) {
+          if (Result) {
             res.json({
               msg: "Logged in successfully.",
               token,
-              cResult: cResult[0],
+              cResult: Result[0],
             });
           } else {
             res.json({
