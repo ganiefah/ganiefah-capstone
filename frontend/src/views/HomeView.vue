@@ -46,7 +46,7 @@
         <div class="card">
           <a href="/products">
         <div class="img-content">
-          <img src="https://i.postimg.cc/3xfF12fD/Guardians-Of-The-Galaxy-Vol-3.jpg" alt="">
+          <img src="https://i.postimg.cc/GpfWHjf3/barbie-the-album.jpg" alt="">
         </div>
         <div class="content">
           <p class="heading">Sale Item</p>

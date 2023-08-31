@@ -10,7 +10,7 @@
             <br>
             <ul>
                 <li><a href="/products">Products</a></li><br>
-                <li><a href="./html/test.html">Help</a></li><br>
+                <li><a href="/help">Help</a></li><br>
                 <li><a href="/contact">Contact</a></li>
             </ul>
         </div>
@@ -31,11 +31,11 @@
                   7500
                 </li><br>
                 <li>Phone number: 021 970 1470</li><br>
-                <li>Our Email: SoleCartel@gmail.com</li>
+                <li>Our Email: SonicVinyls@gmail.com</li>
             </ul>
         </div>
         <hr>
-        <div class="conatiner">
+        <div class="container">
             <div class="footer-social-icon">
                 <span>Follow us</span>
                 <br>
