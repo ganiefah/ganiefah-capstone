@@ -62,7 +62,7 @@ routes.get("/orders", (req, res) => {
 routes.get("/order/:id", (req, res) => {
   orders.fetchOrder(req, res);
 });
-routes.post("/addOrder/:orderID//:userID/:prodID", bodyParser.json(), (req, res)=>{
+routes.post("/addOrder/:prodID", bodyParser.json(), (req, res)=>{
   orders.insertOrder(req, res)
 })
 routes.put("/order/:orderID", bodyParser.json(), (req, res) => {
