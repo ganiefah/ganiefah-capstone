@@ -17,29 +17,22 @@
               <th>Action</th>
             </tr>
           </thead>
-          <tbody v-for="user in users" :key="user">
+          <tbody v-for="user in users" :key="user.id">
             <tr v-if="user">
               <td>{{ user.firstName }}</td>
-              <td>{{ user.lastName }}</td>
+              <td>{{ user.surName }}</td>
               <td>{{ user.userAge }}</td>
               <td>{{ user.Gender }}</td>
               <td>{{ user.userRole }}</td>
               <td>{{ user.emailAdd }}</td>
               <td>
                 <img
-                  :src="user.userProfile"
+                  :src="user.profileURL"
                   :alt="user.firstName"
                   loading="lazy"
                   class="img-fluid image"
                 />
               </td>
-              <td>
-              <UpdateUser :user="user"/>  
-                <button class="del" @click="deleteUser(user.UserID)">delete</button>
-              </td>
-            </tr>
-            <tr v-else>
-              <Spinner />
             </tr>
           </tbody>
         </table>
@@ -63,30 +56,21 @@
               <th>Action</th>
             </tr>
           </thead>
-          <tbody v-for="product in filteredProducts" :key="product.prodID">
+          <tbody v-for="product in products" :key="product.prodID">
             <tr v-if="product">
               <td>{{ product.prodID }}</td>
               <td>{{ product.prodName }}</td>
-              <td>{{ product.quantity }}</td>
-              <td>R {{ product.amount }}</td>
+              <td>{{ product.Quantity }}</td>
+              <td>R {{ product.Price }}</td>
               <td>{{ product.Category }}</td>
               <td>
                 <img
-                  :src="product.prodUrl"
+                  :src="product.prodURL"
                   :alt="product.prodName"
                   class="img-fluid image"
                   loading="lazy"
                 />
               </td>
-              <td>
-                <UpdateProducts :product="product"/>
-                <button class="del" @click="remveProduct(product.prodID)">
-                  delete
-                </button>
-              </td>
-            </tr>
-            <tr v-else>
-              <Spinner />
             </tr>
           </tbody>
         </table>
@@ -123,21 +107,12 @@
               <td>{{ order.picture }}</td>
               <td>
                 <img
-                  :src="product.prodUrl"
-                  :alt="product.prodName"
+                  :src="order.picture"
+                  :alt="order.productName"
                   class="img-fluid image"
                   loading="lazy"
                 />
               </td>
-              <td>
-                <UpdateProducts :product="product"/>
-                <button class="del" @click="remveProduct(product.prodID)">
-                  delete
-                </button>
-              </td>
-            </tr>
-            <tr v-else>
-              <Spinner />
             </tr>
           </tbody>
         </table>
@@ -148,10 +123,31 @@
 
 <script>
     export default {
-        
+        computed: {
+    users() {
+      return this.$store.state.users;
+    },
+    products() {
+      return this.$store.state.products;
+    },
+    product() {
+      return this.$store.state.product;
+    },
+    user() {
+      return this.$store.state.user;
+    },
+},
+mounted() {
+  this.$store.dispatch('fetchProducts');
+  this.$store.dispatch("fetchUsers");
+},
     }
 </script>
 
 <style scoped>
 
+img{
+    width: 15%;
+  
+}
 </style>
