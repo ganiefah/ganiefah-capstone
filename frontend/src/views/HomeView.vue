@@ -5,6 +5,8 @@
     <h2>"Unleash the Soundtrack of Time: <br>
       Sonic Vinyls, Where Music Lives."</h2>
    </div>
+
+   <div class="info">
    <h3 class="featured">Featured Products: </h3>
    <div class="row">
     <div class="col d-flex justify-content-center">
@@ -12,7 +14,7 @@
         <div class="card">
           <a href="/products">
         <div class="img-content">
-          <img src="https://i.postimg.cc/RVDWbG99/mac-miller-npr-music-tiny-desk-concert.jpg" alt="">
+          <img src="https://i.postimg.cc/jSWvm3f4/portals-removebg-preview.png" alt="">
         </div>
         <div class="content">
           <p class="heading">Best Sellers</p>
@@ -29,7 +31,7 @@
         <div class="card">
           <a href="/products">
         <div class="img-content">
-          <img src="https://i.postimg.cc/9FyXHq4R/barbie-the-album-exculsive.jpg" alt="">
+          <img src="https://i.postimg.cc/dtsPgCJV/born-singer-j-cole-removebg-preview.png" alt="">
         </div>
         <div class="content">
           <p class="heading">In Stock</p>
@@ -46,7 +48,7 @@
         <div class="card">
           <a href="/products">
         <div class="img-content">
-          <img src="https://i.postimg.cc/GpfWHjf3/barbie-the-album.jpg" alt="">
+          <img src="https://i.postimg.cc/NMkCxN97/England-s-Newest-Hit-Makers-Teal-rolling-stones-removebg-preview.png" alt="">
         </div>
         <div class="content">
           <p class="heading">Sale Item</p>
@@ -60,6 +62,7 @@
     </div>
    </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -79,6 +82,11 @@
   height: 70vh;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.info{
+  background-color: #e8e8e8;
+  height: max-content;
 }
 
 h1{
@@ -128,6 +136,7 @@ h2{
   align-items: center;
   justify-content: center;
   transition: scale 0.6s, rotate 0.6s, filter 1s;
+  background-color: #e8e8e8;
 }
 
 .card .img-content svg {
@@ -185,11 +194,11 @@ img{
 
 .heading{
   color: white;
-  text-shadow: 2px 2px black;
+  text-shadow: 1px 1px gold;
 }
 
 .desc{
-  color: black;
+  color: white;
 }
 
 

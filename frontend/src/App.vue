@@ -40,7 +40,7 @@ nav a {
 
 
 nav a.router-link-exact-active {
-  color: rgb(212, 212, 211);
+  color: gold;
   border-bottom: 1px solid white;
 }
 
