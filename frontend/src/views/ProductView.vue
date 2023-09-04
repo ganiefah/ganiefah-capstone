@@ -1,4 +1,5 @@
 <template>
+  <div class="everything">
     <div class="container">
         <div class="row">
             <h2 class="class-display2 text-white">Products</h2>
@@ -20,7 +21,7 @@
         <div v-else class="row">
             <Spinner />
           </div>
-      
+        </div>
     </div>
 </template>
 <script>
@@ -58,5 +59,21 @@ export default {
 }
 .card{
     margin-bottom:1rem ;
+    background-color: rgb(220, 218, 218);
 }
+
+
+button{
+  border-radius: 5px;
+  width: 7rem;
+  color: black;
+  background-color: rgb(203, 203, 203);
+  box-shadow: 2px 2px grey;
+}
+
+button:hover{
+  color: black;
+  background-color: rgb(240, 239, 239);
+}
+
 </style>

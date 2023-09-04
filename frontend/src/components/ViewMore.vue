@@ -1,7 +1,8 @@
 <template>
     <div class="container" v-if="products">
       <div class="row">
-        <h2 class="class-display2">SELECTED PRODUCT</h2>
+        <a href="/products" class="back" type="button"><i class="bi bi-box-arrow-in-left">Back</i></a>
+        <h2 class="class-display2">{{products.prodName}}</h2>
         <br>
   
       </div>
@@ -9,7 +10,7 @@
         <div class="col">
             <div class="img">
               <img
-                :src="products.prodUrl"
+                :src="products.prodURL"
                 class="img-fluid"
                 :alt="products.prodName"
               />
@@ -31,7 +32,6 @@
       </div>
     </div>
     <div class="else" v-else>
-      <h1>Please Reload The Screen</h1>
       <Spinner/>
     </div>
   </template>
@@ -64,4 +64,15 @@
       align-items: right;   
       text-align: left;
   }
+
+  .back{
+    width: 10%;
+    float: left;
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    margin-top: 1rem;
+  }
+
+ 
   </style>

@@ -73,43 +73,6 @@
         </table>
       </div>
     </center>
-
-    <h1>Orders Table</h1>
-    <AddOrders />
-    <center>
-      <div class="table-responsive">
-        <table class="table table-bordered border-black text-center">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>User's ID</th>
-              <th>Product ID</th>
-              <th>barcode</th>
-              <th>Product Name</th>
-              <th>Price</th>
-              <th>OrderDate</th>
-              <th>Picture</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody v-for="order in orders" :key="order.orderID">
-            <tr v-if="Orders">
-              <td>{{ order.orderID }}</td>
-              <td>{{ user.userID }}</td>
-              <td>{{ product.prodID }}</td>
-              <td>{{ order.barcode }}</td>
-              <td>{{ order.productName }}</td>
-              <td>{{ order.price }}</td>
-              <td>{{ order.OrderDate }}</td>
-              <td>{{ order.picture }}</td>
-              <td>
-                <img :src="order.picture" :alt="order.productName" class="img-fluid image" loading="lazy" />
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </center>
   </div>
 </template>
 
