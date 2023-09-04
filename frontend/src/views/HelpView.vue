@@ -63,6 +63,9 @@ h4{
 .accordion{
     width: 75%;
     
-    
+}
+
+.info{
+  margin-bottom: 2rem;
 }
 </style>
