@@ -32,11 +32,11 @@
                     <li class="nav-item">
                         <router-link to="/register">Register</router-link>
                     </li>                
-                    <router-link to="/profile"><img src="https://i.postimg.cc/q7RpBVXQ/icons8-user-24.png" alt="user" loading="lazy" class="user"></router-link>
+                    <router-link to="/profile"><i class="bi bi-person-circle"></i></router-link>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>                 
-              <router-link to="/cart"><img src="https://i.postimg.cc/SQVV8BWc/icons8-cart-24.png" alt="cart" loading="lazy" class="cart"></router-link>
+              <router-link to="/cart"><i class="bi bi-cart"></i></router-link>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button> 

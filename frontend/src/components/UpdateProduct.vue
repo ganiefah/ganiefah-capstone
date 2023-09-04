@@ -3,25 +3,27 @@
       <!-- Button trigger modal -->
       <button
         type="button"
-        class="btn"
+        class="btn btn-primary"
+        @click="openEditModal(product.prodID)"
         data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
+        :data-bs-target="'#exampleModal' + product.prodID"
       >
-        Add Product
+        Update Products
       </button>
-  
       <!-- Modal -->
       <div
         class="modal fade"
-        id="exampleModal"
+        :id="'exampleModal' + product.prodID"
         tabindex="-1"
-        aria-labelledby="exampleModalLabel"
+        :aria-labelledby="'exampleModalLabel' + product.prodID"
         aria-hidden="true"
       >
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">New Product</h1>
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Update Products
+              </h1>
               <button
                 type="button"
                 class="btn-close"
@@ -30,44 +32,50 @@
               ></button>
             </div>
             <div class="modal-body">
-              <center>
               <input
                 placeholder="Product Name"
                 type="text"
-                v-model="model.product.prodName"
+                v-model="editingProduct.prodName"
                 required
               />
               <input
                 placeholder="Quantity"
                 type="number"
-                v-model="model.product.Quantity"
+                v-model="editingProduct.Quantity"
                 required
               />
               <input
                 placeholder="Price"
                 type="number"
-                v-model="model.product.Price"
+                v-model="editingProduct.Price"
                 required
               />
               <input
                 placeholder="Category"
                 type="text"
-                v-model="model.product.Category"
+                v-model="editingProduct.Category"
                 required
               />
               <input
                 placeholder="Product Image"
                 type="text"
-                v-model="model.product.prodURL"
+                v-model="editingProduct.prodURL"
                 required
               />
-            </center>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn" data-bs-dismiss="modal">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
                 Close
               </button>
-              <button type="button" class="btn" @click="addProduct">
+              <button
+                type="button"
+                class="btn btn-primary"
+                @click="updateProduct(product.prodID)"
+              >
                 Save changes
               </button>
             </div>
@@ -76,42 +84,67 @@
       </div>
     </div>
   </template>
-    
-    <script>
+  
+  <script>
   export default {
+    props: ["product"],
     data() {
       return {
-        model: {
+          editingProduct:{
           product: {
             prodName: "",
-            Quantity: "",
-            Price: "",
+            Quantity: null,
+            Price: null,
             Category: "",
             prodURL: "",
           },
         },
       };
     },
+    computed: {
+      thisProduct() {
+        return this.$store.state.product;
+      },
+    },
     methods: {
-      addProduct() {
-        this.$store.dispatch("addProduct", this.model.product);
-        setTimeout(() => {
-          location.reload();
-        }, 500);
+      openEditModal(prodID) {
+        this.editingProductID = prodID;
+        this.editingProduct = {
+          ...this.$store.state.products.find(
+            (product) => product.prodID === prodID
+          ),
+        };
+      },
+      updateProduct(prodID) {
+        this.$store
+          .dispatch("updateProduct", {
+            prodID: prodID,
+            ...this.editingProduct,
+          })
+          .then(() => {
+            console.log("product successfully updated");
+            setTimeout(() => {
+              location.reload();
+            }, 500);
+          })
+          .catch((err) => {
+            console.error("Error while updating: ", err);
+          });
       },
     },
   };
   </script>
-    
   
   <style scoped>
   .btn{
     border: 1px solid black;
     margin-bottom: 7px;
+    background-color: transparent;
+    color: black;
   }
   
   .btn:hover{
-  color: rgb(126, 126, 126);
+  color: green;
   }
   input{
     display: flex;
