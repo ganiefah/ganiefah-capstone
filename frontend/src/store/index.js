@@ -76,7 +76,7 @@ export default createStore({
     },
     async login(context, payload){
       const {res} = await axios.post(`${capstone}login`, payload)
-      const { err, msg, token, cResult } = res.data
+      const { err, msg, token, cResult } = context
       if(msg === "You are providing the wrong email or password, please check and retry"){
         context.commit("setMsg", "Login Failed")
       } else if(msg === "Logged in successfully" && cResult){

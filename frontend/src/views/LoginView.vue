@@ -1,6 +1,6 @@
 <template>
     <div>
-        <form class="form">
+        <form @submit.prevent="login">
             <div class="container">
               <p class="title">Login to your Account.</p>
               <span class="subtitle">Get started with our website, just create an account and enjoy the experience.</span>
@@ -25,7 +25,8 @@
 </template>
 
 <script>
-        export default {
+      import Swal from 'sweetalert2'
+    export default {
         
         data(){
             return{
@@ -34,7 +35,8 @@
             }
         },
         methods:{
-            async Login(){
+            async login(){
+                console.log("reached")
                 try{
                     const payload = {
                         emailAdd: this.emailAdd,
@@ -52,7 +54,7 @@
                         await Swal.fire({
                             icon: "error",
                             title: "Login failed",
-                            text:"Login failed :("
+                            text:"Login failed, please check and try again"
                         })
                     }
                 } catch(e){
@@ -66,7 +68,7 @@
 
 <style scoped>
 
-.form {
+form {
     width: 100%;
     height: max-content;
     display: flex;
@@ -143,8 +145,12 @@
   .note {
     font-weight: bold;
     font-size: 1rem;
-    color: #8B8E98;
+    color: #5c5c5c;
     text-decoration: underline;
   }
 
+  ::placeholder{
+    color: black;
+  }
+  
 </style>
