@@ -10,7 +10,6 @@ export default createStore({
     product: null,
     spinner: null,
     token: null,
-    msg: null,
     chosenProduct: null
   },
   getters: {},
@@ -36,9 +35,6 @@ export default createStore({
     },
     setToken(state, token) {
       state.token = token;
-    },
-    setMsg(state, msg) {
-      state.msg = msg;
     },
   },
   actions: {
@@ -75,8 +71,8 @@ export default createStore({
       }
     },
     async login(context, payload){
-      const {res} = await axios.post(`${capstone}login`, payload)
-      const { err, msg, token, cResult } = context
+      const res = await axios.post(`${capstone}login`, payload)
+      const { err, msg, token, cResult } = res.data
       if(msg === "You are providing the wrong email or password, please check and retry"){
         context.commit("setMsg", "Login Failed")
       } else if(msg === "Logged in successfully" && cResult){
@@ -87,8 +83,8 @@ export default createStore({
         })
       } else if(err){
         context.commit("setMsg", "Login Failed, Please Check And Retry")
-      }
-    },
+      }
+    },
     async registerUser(context, user) {
         console.log("Starting registration process...");
         console.log(user)

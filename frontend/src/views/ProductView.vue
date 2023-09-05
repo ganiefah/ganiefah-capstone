@@ -2,6 +2,19 @@
   <div class="everything">
     <div class="container">
         <div class="row">
+          <form class="d-flex" role="search">
+            <input class="form-control mx-auto search" type="search" placeholder="Search" aria-label="Search">
+          </form>
+          <select class="form-select me-auto" aria-label="Default select example">
+            <option selected>Sort</option>
+            <option value="1">Name</option>
+            <option value="2">Price</option>
+          </select>
+          <select class="form-select ms-auto" aria-label="Default select example">
+            <option selected>Filter</option>
+            <option value="1">Name</option>
+            <option value="2">Price</option>
+          </select>
             <h2 class="class-display2 text-white">Products</h2>
         </div>
         <div class="row justify-content-center gap-3" v-if="products">
@@ -74,6 +87,15 @@ button{
 button:hover{
   color: black;
   background-color: rgb(240, 239, 239);
+}
+
+.search{
+  width: 50%;
+  margin-top: 1rem;
+}
+
+select{
+  width: 10%;
 }
 
 </style>
