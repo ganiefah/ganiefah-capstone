@@ -4,6 +4,7 @@ import sweet from 'sweetalert'
 import router from '@/router'
 import {useCookies} from 'vue3-cookies'
 const {cookies} = useCookies()
+import authenticateUser from '@/services/authenticateUser';
 const capstone = "https://capstone-api2.onrender.com/";
 
 export default createStore({
@@ -76,17 +77,17 @@ export default createStore({
     },
     async login(context, payload) {
       try {
-        const { msg, token, result } = (
+        const { msg, token, Result } = (
           await axios.post(`${capstone}login`, payload)
         ).data;
-        console.log( msg, token, result);
-        if (result) {
-          context.commit("setUser", { result, msg });
-          cookies.set("LegitUser", { msg, token, result });
-          authenticate.applyToken(token);
+        console.log( msg, token, Result);
+        if (Result) {
+          context.commit("setUser", { Result, msg });
+          cookies.set("LegitUser", { msg, token, Result });
+          authenticateUser.applyToken(token);
           sweet({
             title: msg,
-            text: `Welcome back ${result?.firstName} ${result?.surName}`,
+            text: `Welcome back ${Result?.firstName} ${Result?.surName}`,
             icon: "success",
             timer: 4000,
           });
