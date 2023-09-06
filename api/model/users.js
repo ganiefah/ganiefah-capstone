@@ -96,7 +96,7 @@ async register(req, res) {
             res.json({
               msg: "Logged in successfully.",
               token,
-              Result: Result[0],
+              Result: result[0],
             });
           } else {
             res.json({
