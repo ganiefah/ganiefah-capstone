@@ -1,5 +1,9 @@
 import { createStore } from 'vuex'
 import axios from "axios";
+import sweet from 'sweetalert'
+import router from '@/router'
+import {useCookies} from 'vue3-cookies'
+const {cookies} = useCookies()
 const capstone = "https://capstone-api2.onrender.com/";
 
 export default createStore({
@@ -70,44 +74,60 @@ export default createStore({
         context.commit("setMsg", "an error occurred");
       }
     },
-    async login(context, payload){
-      const res = await axios.post(`${capstone}login`, payload)
-      const { err, msg, token, cResult } = res.data
-      if(msg === "You are providing the wrong email or password, please check and retry"){
-        context.commit("setMsg", "Login Failed")
-      } else if(msg === "Logged in successfully" && cResult){
-        context.commit("setLogStatus", "Logged in")
-        context.commit("setUser", cResult)
-        Cookies.set("Logged", token, {
-          expires: 2
-        })
-      } else if(err){
-        context.commit("setMsg", "Login Failed, Please Check And Retry")
-      }
-    },
-    async registerUser(context, user) {
-        console.log("Starting registration process...");
-        console.log(user)
+    async login(context, payload) {
       try {
-        console.log("payload: ", user)
-        const res = await axios.post(`${capstone}register`, user.UserID);
-        console.log(res.data)
-        const { results, err } = await res.data;
-        console.log(results, err) 
-        if (results) {
-          console.log("User registered successfully:", results[0]); 
-          context.commit("setUser", results[0]);
-          context.commit("setSpinner", false);
+        const { msg, token, result } = (
+          await axios.post(`${capstone}login`, payload)
+        ).data;
+        if (result) {
+          context.commit("setUser", { result, msg });
+          cookies.set("LegitUser", { msg, token, result });
+          authenticate.applyToken(token);
+          sweet({
+            title: msg,
+            text: `Welcome back ${result?.firstName} ${result?.surName}`,
+            icon: "success",
+            timer: 4000,
+          });
+          router.push({ name: "home" });
         } else {
-          console.log("Registration error:", err);
-          context.commit("setMsg", err);
+          sweet({
+            title: "Error",
+            text: msg,
+            icon: "error",
+            timer: 4000,
+          });
         }
       } catch (e) {
-        console.error("An error occurred:", e);
-        context.commit("setMsg", "an error occurred");
+        context.commit(console.log("An error has occurred"));
       }
     },
-    
+    //register
+    async addUser(context, payload) {
+      try {
+        const { msg } = (await axios.post(`${capstone}register`, payload)).data;
+        if (msg) {
+          sweet({
+            title: "Registration",
+            text: msg,
+            icon: "success",
+            timer: 4000,
+          });
+          context.dispatch("fetchUsers");
+          router.push({ name: "login" });
+        } else {
+          sweet({
+            title: "Error",
+            text: msg,
+            icon: "error",
+            timer: 4000
+          });
+        }
+      } catch (e) {
+        context.commit(console.log(e))
+      }
+    },
+
     async updateUser(context, payload) {
       try {
         const { res } = await axios.patch(`${capstone}user/${payload.UserID}`, payload);

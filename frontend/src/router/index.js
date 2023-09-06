@@ -1,4 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import {useCookies} from 'vue3-cookies'
+const {cookies} = useCookies()
 import HomeView from '../views/HomeView.vue'
 
 const routes = [

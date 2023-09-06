@@ -1,6 +1,6 @@
 <template>
     <div>
-        <form class="form">
+        <form class="form" @submit.prevent = "register">
             <div class="container">
               <p class="title">Register to open an Account.</p>
               <span class="subtitle">Get started with our website, just create an account and enjoy the experience.</span>
@@ -9,35 +9,41 @@
             <div class="input">
                 <label class="input_label" for="firstName_field"><i class="bi bi-person-circle"></i> First Name</label>
                 
-                <input placeholder="First Name" title="First Name" name="name" type="text" class="input_field" id="firstName_field" required  oninvalid="this.setCustomValidity('Please Enter Your First Name')"
+                <input v-model="payload.firstName" placeholder="First Name" title="First Name" name="name" type="text" class="input_field" id="firstName_field" required  oninvalid="this.setCustomValidity('Please Enter Your First Name')"
                 oninput="this.setCustomValidity('')">
               </div>
               <div class="input">
                 <label class="input_label" for="Surname_field"><i class="bi bi-person-circle"></i> Last Name</label>
                 
-                <input placeholder="Last Name" title="Surname" name="name" type="text" class="input_field" id="Surname_field" required  oninvalid="this.setCustomValidity('Please Enter Your Last Name')"
+                <input v-model="payload.surName" placeholder="Last Name" title="Surname" name="name" type="text" class="input_field" id="Surname_field" required  oninvalid="this.setCustomValidity('Please Enter Your Last Name')"
+                oninput="this.setCustomValidity('')">
+              </div>
+              <div class="input">
+                <label class="input_label" for="Age_field"><i class="bi bi-person-circle"></i>Age</label>
+                
+                <input v-model="payload.userAge" placeholder="Age" title="Age" name="name" type="text" class="input_field" id="Age_field" required  oninvalid="this.setCustomValidity('Please Enter Your Last Name')"
                 oninput="this.setCustomValidity('')">
               </div>
               <div class="input">
                 <label class="input_label" for="Gender_field"><i class="bi bi-gender-female"></i><i class="bi bi-gender-male"></i> Gender</label>
                 
-                <input placeholder="Gender" title="Gender" name="name" type="text" class="input_field" id="Gender_field" required  oninvalid="this.setCustomValidity('Please Enter Your Gender')"
+                <input v-model="payload.Gender" placeholder="Gender" title="Gender" name="name" type="text" class="input_field" id="Gender_field" required  oninvalid="this.setCustomValidity('Please Enter Your Gender')"
                 oninput="this.setCustomValidity('')">
               </div>
               <div class="input">
                 <label class="input_label" for="Image_field"><i class="bi bi-camera-video"></i> Image</label>
                 
-                <input placeholder="URL" title="email" name="name" type="text" class="input_field" id="Image_field">
+                <input v-model="payload.profileURL" placeholder="URL" name="name" type="text" class="input_field" id="Image_field">
               </div>
             <div class="input">
               <label class="input_label" for="Email_field"><i class="bi bi-envelope-at-fill"></i> Email</label>
               
-              <input placeholder="name@gmail.com" title="email" name="name" type="email" class="input_field" id="Email_field" required  oninvalid="this.setCustomValidity('Please Enter Your Email')"
+              <input v-model="payload.emailAdd" placeholder="name@gmail.com" title="email" name="name" type="email" class="input_field" id="Email_field" required  oninvalid="this.setCustomValidity('Please Enter Your Email')"
               oninput="this.setCustomValidity('')">
             </div>
             <div class="input">
               <label class="input_label" for="Password_field"><i class="bi bi-lock-fill"></i> Password</label>
-              <input placeholder="Password" title="password" name="name" type="password" minlength="4" maxlength="10" class="input_field" id="Password_field" required  oninvalid="this.setCustomValidity('Please Enter Your Password')"
+              <input v-model="payload.userPass" placeholder="Password" title="password" name="name" type="password" minlength="4" maxlength="10" class="input_field" id="Password_field" required  oninvalid="this.setCustomValidity('Please Enter Your Password')"
               oninput="this.setCustomValidity('')">
             </div>
             <button type="submit" class="sign-up_btn">
@@ -50,8 +56,26 @@
 
 <script>
     export default {
-        
+  data() {
+    return {
+      payload: {
+    firstName: "",
+    surName: "",
+    userAge: null ,
+    Gender: "",
+    emailAdd: "",
+    userPass: "",
+    profileURL: "https://i.postimg.cc/HntQPB1k/Feels-Okay-Man.webp"
+          }
+        }
+  },
+  methods: {
+    register() {
+      this.$store.dispatch('addUser', this.payload)
     }
+  }
+    }
+        
 </script>
 
 <style scoped>

@@ -8,11 +8,11 @@
             <br>
             <div class="input">
               <label><i class="bi bi-envelope-at-fill"></i>Email</label>
-              <input v-model="emailAdd" placeholder="name@gmail.com" title="email" name="name" type="email" class="info" >
+              <input v-model="payload.emailAdd" placeholder="name@gmail.com" title="email" name="name" type="email" class="info" >
             </div>
             <div class="input">
               <label><i class="bi bi-lock-fill"></i>Password</label>
-              <input v-model="userPass" placeholder="Password" title="password" name="name" type="password" class="info" >
+              <input v-model="payload.userPass" placeholder="Password" title="password" name="name" type="password" class="info" >
             </div>
             <button type="submit" class="btn">
               <span>Sign In</span>
@@ -23,45 +23,34 @@
 </template>
 
 <script>
-      import sweet from 'sweetalert2'
-    export default {
-        
-        data(){
-            return{
-                emailAdd: '',
-                userPass: ''
-            }
-        },
-        methods:{
-            async login(){
-                console.log("reached")
-                try{
-                    const payload = {
-                        emailAdd: this.emailAdd,
-                        userPass: this.userPass
-                    }
-                    const res = await this.$store.dispatch("login", payload)
-                    if (res){
-                        await sweet.fire({
-                            icon: 'success',
-                            title: "Login successful",
-                            text: "You have logged in successfully"
-                        })
-                        this.$router.push("/")
-                    } else{
-                        await sweet.fire({
-                            icon: "error",
-                            title: "Login failed",
-                            text:"Login failed, please check and try again"
-                        })
-                    }
-                } catch(e){
-                    console.log(e)
-                }
-            }
-        }
-
-    }
+import {useCookies} from 'vue3-cookies'
+const {cookies} = useCookies()
+export default {
+  data() {
+    return {
+      payload: {
+        emailAdd: "",
+        userPass: "",
+      },
+    };
+  },
+  computed: {
+    user() {
+      return this.$store.state.user;
+    },
+  },
+  methods: {
+    login() {
+      this.$store.dispatch("login", this.payload);
+    },
+  },
+  beforeCreate() {
+    this.$store.dispatch("fetchUsers");
+  },
+  mounted() {
+    console.log(cookies.get("LegitUser"));
+  },
+};
 </script>
 
 <style scoped>
