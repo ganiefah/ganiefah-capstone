@@ -71,9 +71,9 @@ async register(req, res) {
     const query = `
             SELECT userID, firstName, surName, userAge, Gender, userRole, emailAdd, userPass, profileURL 
             FROM Users
-            WHERE emailAdd = ?
+            WHERE emailAdd = '${emailAdd}'
         `;
-    db.query(query, [emailAdd], async (err, result) => {
+    db.query(query, async (err, result) => {
       if (err) {
         res.json({
           status: res.statusCode,
