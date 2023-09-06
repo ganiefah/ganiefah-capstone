@@ -79,6 +79,7 @@ export default createStore({
         const { msg, token, result } = (
           await axios.post(`${capstone}login`, payload)
         ).data;
+        console.log( msg, token, result);
         if (result) {
           context.commit("setUser", { result, msg });
           cookies.set("LegitUser", { msg, token, result });
@@ -99,7 +100,7 @@ export default createStore({
           });
         }
       } catch (e) {
-        context.commit(console.log("An error has occurred"));
+        context.commit(console.log((e)));
       }
     },
     //register
