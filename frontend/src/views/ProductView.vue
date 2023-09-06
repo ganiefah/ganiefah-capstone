@@ -25,8 +25,9 @@
                       <h5 class="card-title">{{ product.prodName }} <br> R {{ product.Price }}</h5>
                       <p class="card-text"><span>Category: {{ product.Category }}</span></p>
                       <button class="view" @click="viewProduct(product.prodID)">
-                        <span>View More</span><i class="bi bi-caret-right"></i>
+                        <span>View More</span><i class="bi bi-arrow-right-short"></i>
                     </button>
+                      <button class="cart">Add To Cart<i class="bi bi-cart-plus"></i></button>
                     </div>
                   </div>
             </div>

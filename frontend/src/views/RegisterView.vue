@@ -40,7 +40,7 @@
               <input placeholder="Password" title="password" name="name" type="password" minlength="4" maxlength="10" class="input_field" id="Password_field" required  oninvalid="this.setCustomValidity('Please Enter Your Password')"
               oninput="this.setCustomValidity('')">
             </div>
-            <button title="Sign In" type="submit" class="sign-in_btn">
+            <button type="submit" class="sign-up_btn">
               <span>Sign Up</span>
             </button>
           </form>
@@ -118,7 +118,7 @@
     background-color: transparent;
   }
   
-  .sign-in_btn {
+  .sign-up_btn {
     width: 11rem;
     height: 3rem;
     border: 0;
@@ -128,14 +128,6 @@
     cursor: pointer;
   }
   
-  
-  .note {
-    font-weight: bold;
-    font-size: 1rem;
-    color: #5c5c5c;
-    text-decoration: underline;
-  }
-
   ::placeholder{
     color: black;
   }

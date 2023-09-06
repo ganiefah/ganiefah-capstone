@@ -83,7 +83,7 @@ export default {
 #contact {
     margin: 0;
     padding: 0;
-    background-color: rgb(207, 203, 203);
+    background-color: white;
     padding-bottom: 100px;
 }
 
@@ -118,7 +118,7 @@ export default {
 .form-control,
 textarea {
     max-width: 400px;
-    background-color: grey;
+    background-color: rgb(185, 185, 185);
     letter-spacing: 1px;
     padding: 1rem;
 }
@@ -128,9 +128,10 @@ textarea {
     height: 50px;
     width: 400px;
     overflow: hidden;
-    background-color: grey;
-    color: white;
+    background-color:  rgb(185, 185, 185);
+    color: black;
 }
+
 
 
 .send-text {

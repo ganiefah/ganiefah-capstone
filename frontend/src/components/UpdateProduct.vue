@@ -8,7 +8,7 @@
         data-bs-toggle="modal"
         :data-bs-target="'#exampleModal' + product.prodID"
       >
-        Update Products
+        Edit
       </button>
       <!-- Modal -->
       <div

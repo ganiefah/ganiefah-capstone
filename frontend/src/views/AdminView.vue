@@ -27,7 +27,7 @@
               <td>
                 <img :src="user.profileURL" :alt="user.firstName" loading="lazy" class="img-fluid image" />
               </td>
-              
+              <UpdateUser: user="user"/>
               <button class="del" @click="deleteUser(user.userID)">
                 delete
               </button>
@@ -77,7 +77,7 @@
 </template>
 
 <script>
-
+import UpdateUser from '../components/UpdateUser.vue'
 import UpdateProduct from "../components/UpdateProduct.vue";
 import AddProducts from "../components/AddProduct.vue";
 import Spinner from "../components/Spinner.vue";
@@ -85,7 +85,8 @@ export default {
   components: {
     Spinner,
     AddProducts,
-    UpdateProduct
+    UpdateProduct,
+    UpdateUser
   },
   computed: {
     users() {
