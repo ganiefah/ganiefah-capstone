@@ -4,40 +4,75 @@ const {cookies} = useCookies()
 import HomeView from '../views/HomeView.vue'
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    {
+      path: "/",
+      name: "home",
+      component: HomeView,
+      beforeEnter() {
+        if (!cookies.get('LegitUser')) {
+          router.push({ name: 'login' })
+        }
+    },
   },
   {
     path: '/about',
     name: 'about',
-    component: () => import( '../views/AboutView.vue')
+    component: () => import( '../views/AboutView.vue'),
+    beforeEnter() {
+      if (!cookies.get('LegitUser')) {
+        router.push({ name: 'login' })
+      }
+  },
   },
   {
     path: '/products',
     name: 'products',
-    component: () => import( '../views/ProductView.vue')
+    component: () => import( '../views/ProductView.vue'),
+    beforeEnter() {
+      if (!cookies.get('LegitUser')) {
+        router.push({ name: 'login' })
+      }
+  },
   },
   {
     path: '/help',
     name: 'help',
-    component: () => import( '../views/HelpView.vue')
+    component: () => import( '../views/HelpView.vue'),
+    beforeEnter() {
+      if (!cookies.get('LegitUser')) {
+        router.push({ name: 'login' })
+      }
+  },
   },
   {
     path: '/admin',
     name: 'admin',
-    component: () => import( '../views/AdminView.vue')
+    component: () => import( '../views/AdminView.vue'),
+    beforeEnter() {
+      if (!cookies.get('LegitUser')) {
+        router.push({ name: 'login' })
+      }
+  },
   },
   {
     path: '/contact',
     name: 'contact',
-    component: () => import( '../views/ContactView.vue')
+    component: () => import( '../views/ContactView.vue'),
+    beforeEnter() {
+      if (!cookies.get('LegitUser')) {
+        router.push({ name: 'login' })
+      }
+  },
   },
   {
     path: '/profile',
     name: 'profile',
-    component: () => import( '../views/ProfileView.vue')
+    component: () => import( '../views/ProfileView.vue'),
+    beforeEnter() {
+      if (!cookies.get('LegitUser')) {
+        router.push({ name: 'login' })
+      }
+  },
   },
   {
     path: '/login',
@@ -52,7 +87,12 @@ const routes = [
   {
     path: '/cart',
     name: 'cart',
-    component: () => import( '../views/CartView.vue')
+    component: () => import( '../views/CartView.vue'),
+    beforeEnter() {
+      if (!cookies.get('LegitUser')) {
+        router.push({ name: 'login' })
+      }
+  },
   },
   {
     path: '/more',

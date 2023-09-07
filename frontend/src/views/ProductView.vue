@@ -3,13 +3,20 @@
     <div class="container">
         <div class="row">
           <form class="d-flex" role="search">
-            <input class="form-control mx-auto search" type="search" placeholder="Search" aria-label="Search">
+            <input
+            class="form-control mx-auto search"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            v-model="searchQuery"
+          >          
           </form>
-          <select class="form-select me-auto" aria-label="Default select example">
-            <option selected>Sort</option>
-            <option value="1">Name</option>
-            <option value="2">Price</option>
+          <select class="form-select me-auto" aria-label="Default select example" v-model="selectedSort">
+            <option selected disabled>Sort</option>
+            <option value="name">Name</option>
+            <option value="price">Price</option>
           </select>
+          
           <select class="form-select ms-auto" aria-label="Default select example">
             <option selected>Filter</option>
             <option value="1">Name</option>
@@ -18,7 +25,7 @@
             <h2 class="class-display2 text-white">Products</h2>
         </div>
         <div class="row justify-content-center gap-3" v-if="products">
-            <div class="col" v-for="product of products" :key="product">
+          <div class="col" v-for="product of filteredProducts" :key="product.prodID">
                 <div class="card" style="width: 18rem;">
                     <img :src="product.prodURL" class="card-img-top img-fluid" :alt="prodName">
                     <div class="card-body">
@@ -41,13 +48,24 @@
 <script>
  import Spinner from "../components/Spinner.vue";
 export default {
+  data() {
+  return {
+    searchQuery: '',
+  };
+},
   components: {
     Spinner,
   },
   computed: {
     products() {
       return this.$store.state.products;
-    }
+    },
+  filteredProducts() {
+    return this.$store.state.products.filter((product) =>
+      product.prodName.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+      product.Category.toLowerCase().includes(this.searchQuery.toLowerCase())
+    );
+  },
   }, 
   methods: {
     viewProduct(prodID) {
@@ -73,7 +91,7 @@ export default {
 }
 .card{
     margin-bottom:1rem ;
-    background-color: rgb(220, 218, 218);
+    background-color: rgb(251, 251, 251);
 }
 
 

@@ -49,9 +49,22 @@
 </template>
 
 <script>
-    export default {
-        
+import { useCookies } from "vue3-cookies";
+const {cookies} = useCookies();
+export default {
+  computed: {
+    user() {
+      return this.$store.state.user ||
+      cookies.get('LegitUser')
+    },
+    result() {
+      return this.user?.result
+    },
+    isAdmin() {
+      return this.result?.userRole?.toLowerCase() === "admin"
     }
+  }
+};
 </script>
 
 <style scoped>
