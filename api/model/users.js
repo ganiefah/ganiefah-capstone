@@ -41,7 +41,7 @@ class Users {
   users 
 async register(req, res) {
     const data = req.body;
-    data.userPass = await hash(data.userPass, 16);
+    data.userPass = await hash(data.userPass, 10);
     const user = {
       emailAdd: data.emailAdd,
       userPass: data.userPass,
