@@ -1,1 +1,36 @@
-/* for later use  */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: rgb(255, 240, 158) !important;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #fff;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #0C0C0F;
+  }
+  
+  .tablecon {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .heading {
+    width: 300px;
+    text-align: center;
+  }
+  
+  
+  .tableRows {
+      text-align: center;
+  }

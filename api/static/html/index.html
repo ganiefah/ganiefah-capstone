@@ -1,11 +1,167 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Routes</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Backend HTML</h1>
+    <h2>Router Description</h2>
+
+    <div class="container-fluid">
+      <h2>Home</h2>
+      <div class="tablecon">
+        <table
+          class="table table-bordered border-black table-secondary table-hover w-auto"
+        >
+          <thead>
+            <tr>
+              <th scope="col" class="heading">HTTPS Methods</th>
+              <th scope="col" class="heading">Path</th>
+            </tr>
+          </thead>
+          <tbody id="adminInput">
+            <tr>
+              <td><div class="tableRows">GET</div></td>
+              <td><div class="tableRows">/ (Home Page)</div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <h2>Users</h2>
+      <div class="tablecon">
+        <table
+          class="table table-bordered border-black table-secondary table-hover w-auto"
+        >
+          <thead>
+            <tr>
+              <th scope="col" class="heading">HTTPS Methods</th>
+              <th scope="col" class="heading">Path</th>
+            </tr>
+          </thead>
+          <tbody id="adminInput">
+            <tr>
+              <td><div class="tableRows">GET</div></td>
+              <td><div class="tableRows">/users (retrieves all users)</div></td>
+            </tr>
+            <tr>
+              <td><div class="tableRows">GET</div></td>
+              <td>
+                <div class="tableRows">/user/:id (retrieves a single user)</div>
+              </td>
+            </tr>
+            <tr>
+              <td><div class="tableRows">POST</div></td>
+              <td><div class="tableRows">/register (registers a user)</div></td>
+            </tr>
+            <tr>
+              <td><div class="tableRows">POST</div></td>
+              <td><div class="tableRows">/login (logins a user)</div></td>
+            </tr>
+            <tr>
+              <td><div class="tableRows">PATCH</div></td>
+              <td>
+                <div class="tableRows">
+                  /user/:id (edit/update a user's information)
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><div class="tableRows">DELETE</div></td>
+              <td><div class="tableRows">/user/:id (delete a user)</div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <h2>Products</h2>
+      <div class="tablecon">
+        <table
+          class="table table-bordered border-black table-secondary table-hover w-auto"
+        >
+          <thead>
+            <tr>
+              <th scope="col" class="heading">HTTPS Methods</th>
+              <th scope="col" class="heading">Path</th>
+            </tr>
+          </thead>
+          <tbody id="adminInput">
+            <tr>
+              <td><div class="tableRows">GET</div></td>
+              <td>
+                <div class="tableRows">/products (retrieves all products)</div>
+              </td>
+            </tr>
+            <tr>
+              <td><div class="tableRows">GET</div></td>
+              <td>
+                <div class="tableRows">
+                  /product/:prodID (retrieves a single product)
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><div class="tableRows">POST</div></td>
+              <td><div class="tableRows">/product (adds a product)</div></td>
+            </tr>
+            <tr>
+              <td><div class="tableRows">PATCH</div></td>
+              <td>
+                <div class="tableRows">
+                  /product/:prodID (edit/update a product's information)
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><div class="tableRows">DELETE</div></td>
+              <td>
+                <div class="tableRows">/product/:prodID (delete a product)</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+      <h2>Orders</h2>
+      <div class="tablecon">
+        <table
+          class="table table-bordered border-black table-secondary table-hover w-auto"
+        >
+          <thead>
+            <tr>
+              <th scope="col" class="heading">HTTPS Methods</th>
+              <th scope="col" class="heading">Path</th>
+            </tr>
+          </thead>
+          <tbody id="adminInput">
+            <tr>
+              <td><div class="tableRows">GET</div></td>
+              <td>
+                <div class="tableRows">/orders (retrieves all products)</div>
+              </td>
+            </tr>
+            <tr>
+            <tr>
+              <td><div class="tableRows">DELETE</div></td>
+              <td>
+                <div class="tableRows">/order/:prodID (delete a product)</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script> 
 </body>
 </html>
