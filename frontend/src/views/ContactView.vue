@@ -48,20 +48,11 @@
                                         Address</a></span></i></li>
 
                     </ul>
-                    <!-- <center> -->
                         <ul class="social-media-list">
-                            <li><a href="https://www.facebook.com/pottersworkCT/" target="_blank"><img
-                                        src="https://i.postimg.cc/QMwWNNN2/icons8-facebook-150.png" loading="lazy"
-                                        alt="facebook" class="facebook"></a></li>
-                            <li><a href="https://www.instagram.com/potterswork/" target="_blank"><img
-                                        src="https://i.postimg.cc/gcRBWnkP/icons8-instagram-150.png" loading="lazy"
-                                        alt="instagram" class="instagram"></a></li>
-                            <li><a href="https://twitter.com/LaiquahC" target="_blank"><img
-                                        src="https://i.postimg.cc/63bF9JwS/icons8-twitter-150.png" loading="lazy"
-                                        alt="twitter" class="twitter"></a> <br></li>
-
+                            <li><a href="https://www.facebook.com/pottersworkCT/" target="_blank"><i class="bi bi-facebook"></i></a></li>
+                            <li><a href="https://www.instagram.com/potterswork/" target="_blank"><i class="bi bi-instagram"></i></a></li>
+                            <li><a href="https://twitter.com/LaiquahC" target="_blank"><i class="bi bi-twitter"></i></a> <br></li>
                         </ul>
-                    <!-- </center> -->
                     <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED TO SONIC VINYLS</div>
                 </div>
             </div>
@@ -176,10 +167,11 @@ textarea {
 .contact-text a {
     text-decoration: none;
     transition-duration: 0.2s;
+    color: black !important;
 }
 
 .contact-text a:hover {
-    color: #fff !important;
+    color: gold !important;
     text-decoration: none;
 }
 
@@ -218,7 +210,14 @@ textarea {
     border-radius: 20%;
     opacity: 0;
     transition: all .2s ease-in-out;
+    
 }
+
+i{
+    color: gold;
+}
+
+
 
 .social-media-list li:hover:after {
     opacity: 1;

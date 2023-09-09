@@ -97,8 +97,13 @@ const routes = [
   {
     path: '/more',
     name: 'ViewMore',
-    component: () => import( '../views/MoreView.vue')
-  }
+    component: () => import( '../views/MoreView.vue'),
+  },
+  {
+    path: '/checkout',
+    name: 'checkout', 
+    component: () => import( '../views/CheckoutView.vue'),
+  },
 ]
 
 const router = createRouter({

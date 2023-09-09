@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <h1>Users Table</h1>
     <center>
       <div class="table-responsive">

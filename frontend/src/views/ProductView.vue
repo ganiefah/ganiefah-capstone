@@ -11,12 +11,11 @@
             v-model="searchQuery"
           >          
           </form>
-          <select class="form-select me-auto" aria-label="Default select example" v-model="selectedSort">
-            <option selected disabled>Sort</option>
-            <option value="name">Name</option>
-            <option value="price">Price</option>
+          <select class="form-select me-auto" aria-label="Default select example">
+            <option selected>Sort</option>
+            <option value="1">Name</option>
+            <option value="2">Price</option>
           </select>
-          
           <select class="form-select ms-auto" aria-label="Default select example">
             <option selected>Filter</option>
             <option value="1">Name</option>
@@ -34,7 +33,7 @@
                       <button class="view" @click="viewProduct(product.prodID)">
                         <span>View More</span><i class="bi bi-arrow-right-short"></i>
                     </button>
-                      <button class="cart">Add To Cart<i class="bi bi-cart-plus"></i></button>
+                    <button @click="addToCart(product)">Add to Cart</button>
                     </div>
                   </div>
             </div>
@@ -72,6 +71,9 @@ export default {
         const chosenProd = this.products.find((product)=>product.prodID === prodID)
         this.$store.commit("setSingleProduct", chosenProd)
       this.$router.push({ name: "ViewMore", params: { prodID: prodID } });
+    },
+    addToCart(product) {
+      this.$store.dispatch('addToCartAction', product);
     },
   },
 

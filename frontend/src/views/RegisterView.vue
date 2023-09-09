@@ -65,7 +65,7 @@
     Gender: "",
     emailAdd: "",
     userPass: "",
-    profileURL: "https://i.postimg.cc/HntQPB1k/Feels-Okay-Man.webp"
+    profileURL: "https://i.postimg.cc/3rZ0H0D8/profile-Image.png"
           }
         }
   },

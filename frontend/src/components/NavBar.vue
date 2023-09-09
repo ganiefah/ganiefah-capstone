@@ -27,10 +27,10 @@
                     <router-link to="/contact">Contact</router-link>
                   </li>
                   <li class="nav-item">
-                      <router-link to="/login">Login</router-link>
+                      <router-link to="/login" >Login</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link to="/register">Register</router-link>
+                        <router-link to="/register" >Register</router-link>
                     </li>                
                     <router-link to="/profile"><i class="bi bi-person-circle"></i></router-link>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

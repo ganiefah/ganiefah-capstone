@@ -6,6 +6,7 @@ import {useCookies} from 'vue3-cookies'
 const {cookies} = useCookies()
 import authenticateUser from '@/services/authenticateUser';
 const capstone = "https://capstone-api2.onrender.com/";
+const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
 
 export default createStore({
   state: {
@@ -15,7 +16,9 @@ export default createStore({
     product: null,
     spinner: null,
     token: null,
-    chosenProduct: null
+    msg: null,
+    chosenProduct: null,
+    cart: storedCart,
   },
   getters: {},
   mutations: {
@@ -30,7 +33,6 @@ export default createStore({
     },
     setProducts(state, products) {
       state.products = products;
-      console.log(products);
     },
     setProduct(state, product) {
       state.product = product;
@@ -40,6 +42,15 @@ export default createStore({
     },
     setToken(state, token) {
       state.token = token;
+    },
+    setMsg(state, msg) {
+      state.msg = msg;
+    },
+    addToCart(state, product) {
+      state.cart.push(product);
+    },
+    removeFromCart(state, productIndex) {
+      state.cart.splice(productIndex, 1);
     },
   },
   actions: {
@@ -82,8 +93,9 @@ export default createStore({
         ).data;
         console.log( msg, token, Result);
         if (Result) {
-          context.commit("setUser", { Result, msg });
+          context.commit("setUser", Result);
           cookies.set("LegitUser", { msg, token, Result });
+          localStorage.setItem("user", JSON.stringify(Result))
           authenticateUser.applyToken(token);
           sweet({
             title: msg,
@@ -199,6 +211,15 @@ export default createStore({
         context.commit("setMsg", "an error occurred");
       }
     },
+     // Action to add a product to the cart
+  async addToCartAction(context, product) {
+    context.commit('addToCart', product);
+    localStorage.setItem('cart', JSON.stringify(context.state.cart));
+  },
+  
+  async removeFromCartAction(context, productIndex) {
+    context.commit('removeFromCart', productIndex);
+  },
 
   },
   modules: {},

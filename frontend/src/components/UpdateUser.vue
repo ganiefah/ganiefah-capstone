@@ -8,7 +8,7 @@
         data-bs-toggle="modal"
         :data-bs-target="'#exampleModal' + user.userID"
       >
-        Update Products
+        Update User
       </button>
       <!-- Modal -->
       <div
@@ -22,7 +22,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="exampleModalLabel">
-                Update Products
+                Update User
               </h1>
               <button
                 type="button"
@@ -108,8 +108,8 @@
             surName: "",
             userAge: "",
             Gender: "",
-            userRole: "",
             emailAdd: "",
+            userRole: "",
             profileURL: "",
           },
         },

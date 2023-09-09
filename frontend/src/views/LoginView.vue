@@ -43,6 +43,7 @@ export default {
     login() {
       this.$store.dispatch("login", this.payload);
     },
+    
   },
   beforeCreate() {
     this.$store.dispatch("fetchUsers");
