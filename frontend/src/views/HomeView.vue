@@ -73,7 +73,7 @@
 
 <style scoped>
 .home{
-  height: 150vh;
+  height: max-content;
 }
 
 .bg{

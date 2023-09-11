@@ -37,6 +37,6 @@ img{
 }
 
 .body{
-height: 200vh;
+height: max-content;
 }
 </style>

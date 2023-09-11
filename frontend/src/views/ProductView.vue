@@ -119,4 +119,8 @@ select{
   width: 10%;
 }
 
+.card{
+height: max-content;
+}
+
 </style>

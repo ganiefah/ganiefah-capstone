@@ -211,12 +211,10 @@ export default createStore({
         context.commit("setMsg", "an error occurred");
       }
     },
-     // Action to add a product to the cart
   async addToCartAction(context, product) {
     context.commit('addToCart', product);
     localStorage.setItem('cart', JSON.stringify(context.state.cart));
   },
-  
   async removeFromCartAction(context, productIndex) {
     context.commit('removeFromCart', productIndex);
   },
