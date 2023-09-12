@@ -1,6 +1,7 @@
 <template>
   <div >
     <h1>Users Table</h1>
+    <AddUser/>
     <center>
       <div class="table-responsive">
         <table class="table table-bordered border-black text-center">
@@ -27,7 +28,7 @@
               <td>
                 <img :src="user.profileURL" :alt="user.firstName" loading="lazy" class="img-fluid image" />
               </td>
-              <UpdateUser: user="user"/>
+              <UpdateUser :user="user"/>
               <button class="del" @click="deleteUser(user.userID)">
                 delete
               </button>
@@ -77,6 +78,7 @@
 </template>
 
 <script>
+import AddUser from '../components/AddUser.vue'
 import UpdateUser from '../components/UpdateUser.vue'
 import UpdateProduct from "../components/UpdateProduct.vue";
 import AddProducts from "../components/AddProduct.vue";
@@ -86,7 +88,8 @@ export default {
     Spinner,
     AddProducts,
     UpdateProduct,
-    UpdateUser
+    UpdateUser,
+    AddUser
   },
   computed: {
     users() {
@@ -132,15 +135,20 @@ img {
 
 }
 
-.del {
+select{
+  width: 50%;
+}
+
+.del{
   border: 1px solid black;
   margin-bottom: 7px;
   background-color: transparent;
-  color: black;
+  color:black;
   border-radius: 5px;
 }
 
-.del:hover {
-  color: red;
+.del:hover{
+color: red;
 }
+
 </style>

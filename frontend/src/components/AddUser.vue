@@ -7,7 +7,7 @@
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
       >
-        Add Product
+        Add User
       </button>
   
       <!-- Modal -->
@@ -32,33 +32,45 @@
             <div class="modal-body">
               <center>
               <input
-                placeholder="Product Name"
+                placeholder="First Name"
                 type="text"
-                v-model="model.product.prodName"
+                v-model="model.user.firstName"
                 required
               />
               <input
-                placeholder="Quantity"
+                placeholder="Surname"
+                type="text"
+                v-model="model.user.surName"
+                required
+              />
+              <input
+                placeholder="Age"
                 type="number"
-                v-model="model.product.Quantity"
+                v-model="model.user.userAge"
                 required
               />
               <input
-                placeholder="Price"
-                type="number"
-                v-model="model.product.Price"
-                required
-              />
-              <input
-                placeholder="Category"
+                placeholder="Gender"
                 type="text"
-                v-model="model.product.Category"
+                v-model="model.user.Gender"
                 required
               />
               <input
-                placeholder="Product Image"
+                placeholder="Password"
                 type="text"
-                v-model="model.product.prodURL"
+                v-model="model.user.userPass"
+                required
+              />
+              <input
+                placeholder="Email"
+                type="text"
+                v-model="model.user.emailAdd"
+                required
+              />
+              <input
+                placeholder="User Image"
+                type="text"
+                v-model="model.user.profileURL"
                 required
               />
             </center>
@@ -67,7 +79,7 @@
               <button type="button" class="btn" data-bs-dismiss="modal">
                 Close
               </button>
-              <button type="button" class="btn" @click="addProduct">
+              <button type="button" class="btn" @click="addUser">
                 Save changes
               </button>
             </div>
@@ -82,19 +94,22 @@
     data() {
       return {
         model: {
-          product: {
-            prodName: "",
-            Quantity: "",
-            Price: "",
-            Category: "",
-            prodURL: "",
+          user: {
+            firstName: "",
+            surName: "",
+            userAge: null,
+            Gender: "",
+            userPass: "",
+            emailAdd: "",
+            profileURL: "https://i.postimg.cc/3rZ0H0D8/profile-Image.png",
           },
         },
       };
     },
     methods: {
-      addProduct() {
-        this.$store.dispatch("addProduct", this.model.product);
+        addUser() {
+            console.log("reached");
+        this.$store.dispatch("addUser", this.model.user);
         setTimeout(() => {
           location.reload();
         }, 500);

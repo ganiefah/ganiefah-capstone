@@ -25,7 +25,7 @@
                 <br>
             </div>
         </div>
-        
+
           <!-- Button trigger modal -->
       <button
       type="button"
@@ -164,7 +164,7 @@ export default {
             } catch (error) {
                 console.error("Error fetching data from local storage:", error);
             }
-            router.push({ name: "login" });
+            router.push({ name: "login"});
         },
         openEditModal(userID) {
         this.editingUserID = userID;
@@ -175,7 +175,7 @@ export default {
       updateUser(userID) {
         this.$store
           .dispatch("updateUser", {
-            id: userID,
+            userID: userID,
             ...this.editingUser,
           })
           .then(() => {

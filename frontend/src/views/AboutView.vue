@@ -16,8 +16,8 @@
       </div>
     </div>
     <br>
-    <div class="team">
-      <h1>Meet Our Team</h1>
+    <div class="sponsors">
+     
 
     </div>
 

@@ -99,7 +99,7 @@ h1{
 h2{
   color: white;
   float: right;
-  margin-top: 20rem;
+  margin-top: 5rem;
   margin-right: 3rem;
 }
 
@@ -166,6 +166,10 @@ h2{
   pointer-events: none;
   transform: translateY(50px);
   transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.row {
+    --bs-gutter-x: 0rem;
 }
 
 .card .content .heading {

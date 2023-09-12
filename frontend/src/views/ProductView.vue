@@ -2,6 +2,7 @@
   <div class="everything">
     <div class="container">
         <div class="row">
+          <div>
           <form class="d-flex" role="search">
             <input
             class="form-control mx-auto search"
@@ -9,18 +10,15 @@
             placeholder="Search"
             aria-label="Search"
             v-model="searchQuery"
-          >          
+          >        
+          <select class="form-select me-auto" aria-label="Default select example" v-model="sortType">
+            <option value="default">Sort/Default</option>
+            <option value="name">Name</option>
+            <option value="price">Price</option>
+          </select>            
           </form>
-          <select class="form-select me-auto" aria-label="Default select example">
-            <option selected>Sort</option>
-            <option value="1">Name</option>
-            <option value="2">Price</option>
-          </select>
-          <select class="form-select ms-auto" aria-label="Default select example">
-            <option selected>Filter</option>
-            <option value="1">Name</option>
-            <option value="2">Price</option>
-          </select>
+         
+        </div>
             <h2 class="class-display2 text-white">Products</h2>
         </div>
         <div class="row justify-content-center gap-3" v-if="products">
@@ -50,6 +48,7 @@ export default {
   data() {
   return {
     searchQuery: '',
+    sortType: 'default', 
   };
 },
   components: {
@@ -64,6 +63,20 @@ export default {
       product.prodName.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
       product.Category.toLowerCase().includes(this.searchQuery.toLowerCase())
     );
+  },
+  filteredProducts() {
+    let filtered = this.$store.state.products.filter((product) =>
+      product.prodName.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+      product.Category.toLowerCase().includes(this.searchQuery.toLowerCase())
+    );
+
+    if (this.sortType === 'name') {
+      filtered.sort((a, b) => a.prodName.localeCompare(b.prodName));
+    } else if (this.sortType === 'price') {
+      filtered.sort((a, b) => a.Price - b.Price);
+    }
+
+    return filtered;
   },
   }, 
   methods: {
@@ -116,7 +129,9 @@ button:hover{
 }
 
 select{
-  width: 10%;
+  width: 20%;
+  height: 2.5rem;
+  margin-top: 1rem;
 }
 
 .card{

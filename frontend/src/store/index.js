@@ -86,6 +86,7 @@ export default createStore({
         context.commit("setMsg", "an error occurred");
       }
     },
+    //Login
     async login(context, payload) {
       try {
         const { msg, token, Result } = (
@@ -116,7 +117,7 @@ export default createStore({
         context.commit(console.log((e)));
       }
     },
-    //register
+    //Register
     async addUser(context, payload) {
       try {
         const { msg } = (await axios.post(`${capstone}register`, payload)).data;
@@ -141,10 +142,11 @@ export default createStore({
         context.commit(console.log(e))
       }
     },
-
+    //Update User
     async updateUser(context, payload) {
       try {
         const { res } = await axios.patch(`${capstone}user/${payload.UserID}`, payload);
+        console.log("updating");
         const {msg, err} = res.data
         if(msg){
           context.commit("setUser", msg)
@@ -156,6 +158,7 @@ export default createStore({
         context.commit("setMsg", "an error occurred");
       }
     },
+    //Delete User
     async deleteUser(context, UserID) {
       try {
         const res = await axios.delete(`${capstone}user/${UserID}`);
@@ -169,6 +172,7 @@ export default createStore({
         context.commit("setMsg", "an error occurred");
       }
     },
+    //Add Product
     async addProduct(context, payload) {
       console.log("REACHED");
       try {
@@ -184,6 +188,7 @@ export default createStore({
         context.commit("setMsg", "an error occurred");
       }
     },
+    //Update Product
     async updateProduct(context, payload) {
       try {
         const res = await axios.patch(`${capstone}product/${payload.prodID}`, payload);
@@ -198,6 +203,7 @@ export default createStore({
         context.commit("setMsg", "an error occurred");
       }
     },
+    //Remove Product
     async removeProduct(context, prodID) {
       try {
         const { res } = await axios.delete(`${capstone}product/${prodID}`);
@@ -211,10 +217,12 @@ export default createStore({
         context.commit("setMsg", "an error occurred");
       }
     },
+    //Add To Cart
   async addToCartAction(context, product) {
     context.commit('addToCart', product);
     localStorage.setItem('cart', JSON.stringify(context.state.cart));
   },
+  // Remove From Cart
   async removeFromCartAction(context, productIndex) {
     context.commit('removeFromCart', productIndex);
   },
