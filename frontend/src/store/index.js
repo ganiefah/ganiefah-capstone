@@ -12,6 +12,7 @@ export default createStore({
   state: {
     users: null,
     user: null,
+    updates: null,
     products: null,
     product: null,
     spinner: null,
@@ -30,6 +31,9 @@ export default createStore({
     },
     setUser(state, user) {
       state.user = user;
+    },
+    setUpdates(state, updates){
+      state.updates = updates
     },
     setProducts(state, products) {
       state.products = products;
@@ -145,11 +149,14 @@ export default createStore({
     //Update User
     async updateUser(context, payload) {
       try {
-        const { res } = await axios.patch(`${capstone}user/${payload.UserID}`, payload);
+        const res = await axios.patch(`${capstone}user/${payload.userID}`, payload);
         console.log("updating");
+        console.log(res);
         const {msg, err} = res.data
-        if(msg){
-          context.commit("setUser", msg)
+        if(msg === "User profile updated successfully."){
+          context.dispatch("fetchUser")
+          localStorage.setItem("user", JSON.stringify(payload))
+          context.commit("setUpdates", msg)
         }
         if(err){
           context.commit("setMsg", err)
@@ -218,7 +225,7 @@ export default createStore({
       }
     },
     //Add To Cart
-  async addToCartAction(context, product) {
+ async addToCartAction(context, product) {
     context.commit('addToCart', product);
     localStorage.setItem('cart', JSON.stringify(context.state.cart));
   },

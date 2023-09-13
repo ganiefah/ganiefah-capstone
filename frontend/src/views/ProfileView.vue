@@ -89,6 +89,12 @@
               required
             />
             <input
+              placeholder="Password"
+              type="text"
+              v-model="editingUser.userPass"
+              required
+            />
+            <input
               placeholder="Role"
               type="role"
               v-model="editingUser.userRole"
@@ -131,21 +137,14 @@ import { useCookies } from 'vue3-cookies'
 const { cookies } = useCookies()
 
 export default {
-
+  props: ["user"],
     data() {
       return {
-        editingUser:{
-          user: {
-            firstName: "",
-            surName: "",
-            userAge: "",
-            Gender: "",
-            emailAdd: "",
-            userRole: "",
-            profileURL: "",
-          },
-        },
-      };
+        editingUser: {
+        ...this.user,
+      },
+      editingUserID: null,
+    };
     },
     computed: {
         user() {

@@ -3,7 +3,12 @@
     <div class="container">
         <div class="row">
           <div>
-          <form class="d-flex" role="search">
+          <form class="d-flex form" role="search">
+            <select class="form-select me-auto" aria-label="Default select example" v-model="categoryFilter">
+              <option value="default">Filter/Default</option>
+              <option value="Vinyl Record">Vinyl Record</option>
+              <option value="Record Player">Record Player</option>
+            </select>           
             <input
             class="form-control mx-auto search"
             type="search"
@@ -15,14 +20,14 @@
             <option value="default">Sort/Default</option>
             <option value="name">Name</option>
             <option value="price">Price</option>
-          </select>            
+          </select>     
           </form>
          
         </div>
             <h2 class="class-display2 text-white">Products</h2>
         </div>
-        <div class="row justify-content-center gap-3" v-if="products">
-          <div class="col" v-for="product of filteredProducts" :key="product.prodID">
+        <div class="row d-flex justify-content-center" v-if="products">
+          <div class="col d-flex justify-content-center" v-for="product of filteredProducts" :key="product.prodID">
                 <div class="card" style="width: 18rem;">
                     <img :src="product.prodURL" class="card-img-top img-fluid" :alt="prodName">
                     <div class="card-body">
@@ -48,9 +53,12 @@ export default {
   data() {
   return {
     searchQuery: '',
-    sortType: 'default', 
-  };
+    sortType: 'default',
+    categoryFilter: 'default', 
+    };
 },
+
+
   components: {
     Spinner,
   },
@@ -58,27 +66,20 @@ export default {
     products() {
       return this.$store.state.products;
     },
-  filteredProducts() {
-    return this.$store.state.products.filter((product) =>
-      product.prodName.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-      product.Category.toLowerCase().includes(this.searchQuery.toLowerCase())
-    );
-  },
-  filteredProducts() {
-    let filtered = this.$store.state.products.filter((product) =>
-      product.prodName.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-      product.Category.toLowerCase().includes(this.searchQuery.toLowerCase())
-    );
 
+  filteredProducts() {
+    let filtered = this.$store.state.products.filter((products) =>
+      products.prodName.toLowerCase().includes(this.searchQuery.toLowerCase()) &&
+      (this.categoryFilter === 'default' || products.Category === this.categoryFilter)
+    );
     if (this.sortType === 'name') {
       filtered.sort((a, b) => a.prodName.localeCompare(b.prodName));
     } else if (this.sortType === 'price') {
       filtered.sort((a, b) => a.Price - b.Price);
     }
-
     return filtered;
   },
-  }, 
+},
   methods: {
     viewProduct(prodID) {
         const chosenProd = this.products.find((product)=>product.prodID === prodID)
@@ -86,6 +87,7 @@ export default {
       this.$router.push({ name: "ViewMore", params: { prodID: prodID } });
     },
     addToCart(product) {
+      if (confirm("Added To Cart Successfully"))
       this.$store.dispatch('addToCartAction', product);
     },
   },
@@ -136,6 +138,21 @@ select{
 
 .card{
 height: max-content;
+}
+
+@media (max-width:768px) {
+
+  select {
+    width: 100%;
+  }
+
+  .search {
+    width: 100%;
+  }
+  
+  .form {
+    flex-direction: column;
+  }
 }
 
 </style>

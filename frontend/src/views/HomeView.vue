@@ -1,13 +1,37 @@
 <template>
   <div class="home">
-   <div class="bg">
-    <h1>SONIC VINYLS</h1>
-    <h2>"Unleash the Soundtrack of Time: <br>
-      Sonic Vinyls, Where Music Lives."</h2>
-   </div>
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="2000">
+          <img src="https://i.postimg.cc/7Y5pWfR3/miriana-doroban-u-i-Rj-OMSp-Za-EE-unsplash1.jpg" class="d-block image w-100" alt="background">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1 class="words">Want To Know More About Us ?</h1>
+              <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="https://i.postimg.cc/RVSTWKM9/pexels-andrea-turner-707697.jpg" class="d-block  image w-100" alt="background">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="https://i.postimg.cc/nzpRF5rY/mike-von-X4d6-DUMapp-U-unsplash.jpg" class="d-block image w-100" alt="background">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
 
    <div class="info">
-   <h3 class="featured">Featured Products: </h3>
+   <h3 class="featured">Shop Now:</h3>
    <div class="row">
     <div class="col d-flex justify-content-center">
       <div class="card-container">
@@ -17,7 +41,7 @@
           <img src="https://i.postimg.cc/jSWvm3f4/portals-removebg-preview.png" alt="">
         </div>
         <div class="content">
-          <p class="heading">Best Sellers</p>
+          <p class="heading">Vinyls</p>
           <p class="desc">
             Welcome to our Best Sellers category, a haven for vinyl enthusiasts and collectors alike. Immerse yourself in a world where classic melodies and contemporary beats come to life in the form of timeless vinyl records.
           </p>
@@ -34,7 +58,7 @@
           <img src="https://i.postimg.cc/dtsPgCJV/born-singer-j-cole-removebg-preview.png" alt="">
         </div>
         <div class="content">
-          <p class="heading">In Stock</p>
+          <p class="heading">Record Players</p>
           <p class="desc">
             Welcome to our In Stock category, a treasure trove for vinyl enthusiasts seeking instant gratification. Here, you'll find a wide and diverse selection of vinyl records that are ready to find a new home in your collection without delay.
           </p>
@@ -51,7 +75,7 @@
           <img src="https://i.postimg.cc/NMkCxN97/England-s-Newest-Hit-Makers-Teal-rolling-stones-removebg-preview.png" alt="">
         </div>
         <div class="content">
-          <p class="heading">Sale Item</p>
+          <p class="heading">Sale Items</p>
           <p class="desc">
             Welcome to our Sale Items category, where the enchanting world of vinyl meets unbeatable deals and irresistible offers. Dive into a collection that combines the allure of timeless music with the excitement of remarkable savings.
           </p>
@@ -62,6 +86,7 @@
     </div>
    </div>
   </div>
+
 </div>
 </template>
 
@@ -75,17 +100,20 @@
 .home{
   height: max-content;
 }
+.image{
+  aspect-ratio: 16/9;
+  
+}
 
-.bg{
-  background-image: url(https://i.postimg.cc/x1NW6fRw/miriana-doroban-u-i-Rj-OMSp-Za-EE-unsplash.jpg);
+.carousel-item{
   width: 100%;
-  height: 70vh;
+  height: 86vh;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .info{
-  background-color: #e8e8e8;
+  
   height: max-content;
 }
 
@@ -136,13 +164,13 @@ h2{
   align-items: center;
   justify-content: center;
   transition: scale 0.6s, rotate 0.6s, filter 1s;
-  background-color: #e8e8e8;
+  
 }
 
 .card .img-content svg {
   width: 50px;
   height: 50px;
-  fill: #e8e8e8;
+ 
   transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
@@ -206,5 +234,8 @@ img{
 }
 
 
+.words{
+  float: none;
+}
 
 </style>
