@@ -5,6 +5,7 @@
        <h4> At Sonic Vinyls, we're passionate about all things vinyl records, and we're committed to making your vinyl shopping experience as smooth as the grooves on your favorite vinyl. Our Help Center is here to assist you with any questions or concerns you may have while exploring our store and enjoying your vinyl journey.</h4>
     </div>
     <center>
+      <br>
     <div class="accordion" id="accordionExample">
         <div class="accordion-item">
           <h2 class="accordion-header">
@@ -44,6 +45,7 @@
         </div>
       </div>
     </center>
+    <br>
 </div>
 </template>
 
@@ -68,4 +70,5 @@ h4{
 .info{
   margin-bottom: 2rem;
 }
+
 </style>

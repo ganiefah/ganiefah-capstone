@@ -2,21 +2,35 @@
   <div class="home">
     <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="2000">
-          <img src="https://i.postimg.cc/7Y5pWfR3/miriana-doroban-u-i-Rj-OMSp-Za-EE-unsplash1.jpg" class="d-block image w-100" alt="background">
+        <div class="carousel-item active" data-bs-interval="4000">
+          <img src="https://i.postimg.cc/7Y5pWfR3/miriana-doroban-u-i-Rj-OMSp-Za-EE-unsplash1.jpg" loading="lazy" class="d-block image w-100" alt="background">
           <div class="container">
             <div class="carousel-caption">
               <h1 class="words">Want To Know More About Us ?</h1>
-              <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
-              <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+              <h5 class="description">For more information on what we do and who we are click the button below to explore our about us page.</h5>
+              <a class="btn" href="/about">Find Out More</a>
             </div>
           </div>
         </div>
-        <div class="carousel-item" data-bs-interval="2000">
+        <div class="carousel-item" data-bs-interval="3000">
           <img src="https://i.postimg.cc/RVSTWKM9/pexels-andrea-turner-707697.jpg" class="d-block  image w-100" alt="background">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1 class="words">Looking For Your Favorite Vinyls?</h1>
+              <h5 class="description">Want to browse our wide selection of different vinyls, record players and accessories, click below .</h5>
+              <a class="btn" href="/products">Our Catalog</a>
+            </div>
+          </div>
         </div>
-        <div class="carousel-item" data-bs-interval="2000">
+        <div class="carousel-item" data-bs-interval="4000">
           <img src="https://i.postimg.cc/nzpRF5rY/mike-von-X4d6-DUMapp-U-unsplash.jpg" class="d-block image w-100" alt="background">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1 class="words">Looking For Some Help?</h1>
+              <h5 class="description">Feel free to leave us with feedback on how to improve and feel free to leave any queries you may have.</h5>
+              <a class="btn" href="/contact">Contact Us</a>
+            </div>
+          </div>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -107,7 +121,7 @@
 
 .carousel-item{
   width: 100%;
-  height: 86vh;
+  height: 90vh;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -236,6 +250,24 @@ img{
 
 .words{
   float: none;
+  font-family: 'Modist', sans-serif; 
+  color: gold;   
+  text-shadow: 4px 4px black;  
+  float: right;                                     
+}
+
+.description{
+  color: white;
+  float: right;
+}
+
+.btn{
+
+  color: white;
+  float: right;
+  margin-top: 1rem;
+  border: 1px solid gold;
+  
 }
 
 </style>

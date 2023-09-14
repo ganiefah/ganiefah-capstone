@@ -114,15 +114,10 @@ export default {
 
 button{
   border-radius: 5px;
-  width: 7rem;
+  width: 6rem;
   color: black;
-  background-color: rgb(203, 203, 203);
-  box-shadow: 2px 2px grey;
-}
-
-button:hover{
-  color: black;
-  background-color: rgb(240, 239, 239);
+  background-color: white;
+  margin-right: 0.5rem;
 }
 
 .search{
