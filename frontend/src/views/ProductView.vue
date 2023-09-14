@@ -6,8 +6,9 @@
           <form class="d-flex form" role="search">
             <select class="form-select me-auto" aria-label="Default select example" v-model="categoryFilter">
               <option value="default">Filter/Default</option>
-              <option value="Vinyl Record">Vinyl Record</option>
-              <option value="Record Player">Record Player</option>
+              <option value="Best Sellers">Best Seller</option>
+              <option value="Trending">Trending</option>
+              <option value="Sale">Sale Items</option>
             </select>           
             <input
             class="form-control mx-auto search"
