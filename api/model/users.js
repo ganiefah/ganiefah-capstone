@@ -110,9 +110,9 @@ async register(req, res) {
   }
   updateUser(req, res) {
     const query = `
-            UPDATE Users SET ? WHERE userID = ${req.params.id}
+             UPDATE Users SET ? WHERE userID = ?
         `;
-    db.query(query, [req.body], (err) => {
+    db.query(query, [req.body, req.params.id], (err) => {
       if (!err) {
         res.json({
           status: res.statusCode,
