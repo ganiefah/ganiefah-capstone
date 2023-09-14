@@ -33,7 +33,7 @@
   left: 1.5rem;
   right: 1.5rem;
   bottom: 1.5rem;
-  background-color: gold;
+  background: repeating-radial-gradient(white,black, black, black);
   border-radius: 50%;  
 }
 

@@ -33,7 +33,7 @@
               <div class="input">
                 <label class="input_label" for="Image_field"><i class="bi bi-camera-video"></i> Image</label>
                 
-                <input v-model="payload.profileURL" placeholder="URL" name="image" type="image" class="input_field" id="Image_field">
+                <input v-model="payload.profileURL" placeholder="URL" name="image" type="text" class="input_field" id="Image_field">
               </div>
             <div class="input">
               <label class="input_label" for="Email_field"><i class="bi bi-envelope-at-fill"></i> Email</label>

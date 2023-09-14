@@ -236,6 +236,7 @@ h2{
 
 img{
   width: 100%;
+
 }
 
 .heading{
@@ -267,6 +268,19 @@ img{
   float: right;
   margin-top: 1rem;
   border: 1px solid gold;
+  
+}
+
+@media (max-width: 850px) {
+  
+  .image{
+    height: auto !important;
+  }
+
+  .carousel-item{
+    height: auto;
+  }
+
   
 }
 

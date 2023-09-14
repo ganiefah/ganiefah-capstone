@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Your Cart <i class="bi bi-basket"></i></h1>
+    <h1 class="words">Your Cart <i class="bi bi-basket"></i></h1>
     <center>
       <div class="table-responsive">
         <table class="table table-bordered border-black text-center">
