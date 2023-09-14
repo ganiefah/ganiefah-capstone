@@ -7,9 +7,10 @@
       </div>
       <div class="row">
         <div class="col">
-          <h1>Preview The Album</h1>
+          <h1>Preview Of {{ products.prodName }}</h1>
             <center>
-            <div class="body">
+            <div class="body"> 
+                <p class="info">{{ products.prodDescription }}</p>
               <iframe style="border-radius:1rem" :src="products.prodDesc"  width="50%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
           </center>
@@ -63,6 +64,11 @@
   iframe{
     float: right;
     margin-bottom: 1rem;
+  }
+
+  .info{
+    float: left;
+    color: black;
   }
  
   </style>
