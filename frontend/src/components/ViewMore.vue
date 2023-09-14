@@ -2,26 +2,15 @@
     <div class="container" v-if="products">
       <div class="row">
         <a href="/products" class="back" type="button"><i class="bi bi-box-arrow-in-left">Back</i></a>
-        <h2 class="class-display2">{{products.prodName}}</h2>
         <br>
   
       </div>
       <div class="row">
         <div class="col">
-            <div class="img">
-              <img
-                :src="products.prodURL"
-                class="img-fluid"
-                :alt="products.prodName"
-              />
-            </div>
+          <h1>Preview The Album</h1>
             <center>
             <div class="body">
-              <h2 class=" mt-5">
-                {{ products.prodName }} <br>
-                R {{ products.Price }}
-              </h2>
-              <p>{{ products.prodDesc }}</p>
+              <iframe style="border-radius:12px" :src="products.prodDesc"  width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
           </center>
         </div>
@@ -65,11 +54,16 @@
       text-align: left;
   }
 
+  a{
+    text-decoration: none !important;
+  }
+
   .back{
-    width: 10%;
+    width: max-content;
     float: left;
-    color: white;
-    background-color: red;
+    border: 2px solid red;
+    color: black;
+    background-color: white;
     border-radius: 5px;
     margin-top: 1rem;
   }

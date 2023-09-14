@@ -51,6 +51,7 @@
               <th>quantity</th>
               <th>price</th>
               <th>category</th>
+              <th>description</th>
               <th>product image</th>
               <th>Action</th>
             </tr>
@@ -62,6 +63,7 @@
               <td>{{ product.Quantity }}</td>
               <td>R {{ product.Price }}</td>
               <td>{{ product.Category }}</td>
+              <td>{{ product.prodDesc }}</td>
               <td>
                 <img :src="product.prodURL" :alt="product.prodName" class="img-fluid image" loading="lazy" />
               </td>

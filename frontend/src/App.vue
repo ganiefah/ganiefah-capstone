@@ -31,6 +31,10 @@
   font-family: 'Playfair Display', serif;
 }
 
+h1{
+  font-family: 'Modist', sans-serif; 
+}
+
 nav {
   padding: 30px;
   background-color: black !important;
