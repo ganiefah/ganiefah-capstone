@@ -9,7 +9,6 @@
               <option value="Best Sellers">Best Seller</option>
               <option value="Trending">Trending</option>
               <option value="Sale">Sale Items</option>
-              <option value="Record Player">Record Players</option>
             </select>           
             <input
             class="form-control mx-auto search"

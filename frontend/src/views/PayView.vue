@@ -217,8 +217,12 @@
 </script>
 
 <style scoped>
-.cart  {
-  min-height: 60vh;
+.container{
+  
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+  border-radius: 5px;
+  width: fit-content;
 }
 
 th {
@@ -228,6 +232,11 @@ text-align: center;
 td {
 height: 150px;
 }
+
+h2{
+  color: gold;
+}
+
 
 
 </style>
