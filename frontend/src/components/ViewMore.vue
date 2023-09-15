@@ -8,10 +8,10 @@
       <div class="row">
         <div class="col">
           <h1>Preview Of {{ products.prodName }}</h1>
-            <center>
-            <div class="body"> 
-                <p class="info">{{ products.prodDescription }}</p>
-              <iframe style="border-radius:1rem" :src="products.prodDesc"  width="50%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <center>
+            <div class="body">
+              <p>{{ products.prodDescription }}</p>
+              <iframe style="border-radius:1rem" :src="products.prodDesc"  height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
           </center>
         </div>
@@ -20,9 +20,6 @@
       <div v-if="loading" class="row">
         <Spinner />
       </div>
-    </div>
-    <div class="else" v-else>
-      <Spinner/>
     </div>
   </template>
   
@@ -64,11 +61,16 @@
   iframe{
     float: right;
     margin-bottom: 1rem;
-  }
-
-  .info{
-    float: left;
-    color: black;
+    width: 100%;
   }
  
+@media (max-width:800px) {
+
+  iframe{
+    height:fit-content;
+    margin-bottom: 0;
+  }
+
+}
+
   </style>

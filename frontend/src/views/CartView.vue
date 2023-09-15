@@ -36,9 +36,13 @@
                 <button @click="removeFromCart(index)">Remove</button>
               </td>
             </tr>
+             <th scope="col" class="last">Amount Due:</th>
+               <th scope="col" class="last">R {{ totalAmount }}</th>
+               <button @click="redirectToCheckout" class="btn">Proceed To Checkout...</button>
           </tbody>
+
         </table>
-        <button @click="redirectToCheckout">Proceed To Checkout...</button>
+       
       </div>
     </center>
   </div>
@@ -46,11 +50,16 @@
 
 
 <script>
-import router from "@/router"
+import router from '@/router'
 export default {
   computed: {
     cart() {
       return this.$store.state.cart;
+    },
+    totalAmount() {
+      return this.cart.reduce((total, item) => {
+        return total + item.Price;
+      }, 0);
     },
   },
   methods: {
@@ -73,5 +82,9 @@ export default {
 <style scoped>
 img{
   width: 20%;
+}
+
+.btn{
+  float: right;
 }
 </style>

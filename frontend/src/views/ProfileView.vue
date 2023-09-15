@@ -34,7 +34,7 @@
       data-bs-toggle="modal"
       :data-bs-target="'#exampleModal' + user.userID"
     >
-      Update User
+      Edit
     </button>
     <!-- Modal -->
     <div
@@ -57,7 +57,8 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">
+          <center>
+            <div class="modal-body">
             <input
               placeholder="First Name"
               type="name"
@@ -107,6 +108,7 @@
               required
             />
           </div>
+        </center>
           <div class="modal-footer">
             <button
               type="button"
@@ -126,8 +128,8 @@
         </div>
       </div>
     </div>
-        <button class="btn" @click.prevent="LogOut">Logout</button>
-        <button class="del btn" @click="deleteUser(user.userID)">delete</button>
+        <button class="btn" @click.prevent="LogOut" >Logout</button>
+        <button class="del btn" @click="deleteUser(user.userID)">Delete</button>
     </div>
 </template>
 
@@ -189,7 +191,7 @@ export default {
       },
       deleteUser(userID) {
     if (confirm("Are you sure you want to delete this user?"))
-      this.$store.dispatch("deleteUser", userID);
+      this.$store.dispatch("deleteUser", userID)
     setTimeout(() => {
       location.reload();
     }, 500);
@@ -215,7 +217,7 @@ span{
 }
 
 .btn{
-    border: 1px solid black;
+    outline: 1px solid black;
     margin-bottom: 7px;
     background-color: transparent;
     color: black;
@@ -233,5 +235,13 @@ span{
     justify-content: center;
     align-items: center;
     margin-bottom: 7px;
+  }
+
+  @media (max-width:322px) {
+    .btn{
+      font-size: 0.8rem;
+      
+    }
+    
   }
 </style>

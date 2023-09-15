@@ -233,7 +233,14 @@ export default createStore({
   async removeFromCartAction(context, productIndex) {
     context.commit('removeFromCart', productIndex);
   },
-
+  submitCheckout() {
+    sweet({
+      title: "Purchase Successful",
+      text: "Your purchase has been successful",
+      icon: "success",
+      timer: 3000,
+    });
+  }
   },
   modules: {},
 });

@@ -32,30 +32,9 @@
 
                     </button>
 
-                </form>
-
-
-                <div class="direct-contact-container">
-                    <ul class="contact-list">
-                        <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">47 Toner
-                                    Road, Cape Town</span></i></li>
-
-                        <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a
-                                        href="tel:021 970 1470" title="Give Us A Call">Telephone Number</a></span></i></li>
-
-                        <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a
-                                        href="mailto:ganiefahmajiet3@gmail.com" title="Send Us An Email">Our Email
-                                        Address</a></span></i></li>
-
-                    </ul>
-                        <ul class="social-media-list">
-                            <li><a href="https://www.facebook.com/pottersworkCT/" target="_blank"><i class="bi bi-facebook"></i></a></li>
-                            <li><a href="https://www.instagram.com/potterswork/" target="_blank"><i class="bi bi-instagram"></i></a></li>
-                            <li><a href="https://twitter.com/LaiquahC" target="_blank"><i class="bi bi-twitter"></i></a> <br></li>
-                        </ul>
-                    <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED TO SONIC VINYLS</div>
-                </div>
+                </form>                  
             </div>
+            <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED TO SONIC VINYLS</div>
         </section>
     </div>
 </template>
@@ -101,14 +80,10 @@ export default {
     max-width: 840px;
 }
 
-.form-horizontal {
-    max-width: 400px;
-    font-weight: 400;
-}
 
 .form-control,
 textarea {
-    max-width: 400px;
+    
     background-color: rgb(185, 185, 185);
     letter-spacing: 1px;
     padding: 1rem;
@@ -117,9 +92,9 @@ textarea {
 .send-button {
     margin-top: 15px;
     height: 50px;
-    width: 400px;
+    width: 100%;
     overflow: hidden;
-    background-color:  rgb(185, 185, 185);
+    background-color: rgb(185, 185, 185);
     color: black;
 }
 
@@ -131,195 +106,43 @@ textarea {
     letter-spacing: 2px;
 }
 
-.direct-contact-container {
-    max-width: 400px;
-}
-
-
-.contact-list {
-    list-style-type: none;
-    padding-right: 20px;
-}
-
-.list-item {
-    line-height: 4;
-    color: #aaa;
-}
-
-.contact-text {
-    letter-spacing: 1.9px;
-    color: black;
-}
-
-.place {
-    margin-left: 62px;
-}
-
-.phone {
-    margin-left: 56px;
-}
-
-
-.gmail {
-    margin-left: 53px;
-}
-
-.contact-text a {
-    text-decoration: none;
-    transition-duration: 0.2s;
-    color: black !important;
-}
-
-.contact-text a:hover {
-    color: gold !important;
-    text-decoration: none;
-}
-
-.social-media-list {
-    position: relative;
-    font-size: 22px;
-    text-align: center;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-
-
-.social-media-list li {
-    position: relative;
-    display: inline-block;
-    height: 50px;
-    width: 50px;
-    margin: 0 0 1rem 1rem;
-    line-height: 60px;
-    border-radius: 20%;
-    color: #fff !important;
-    cursor: pointer;
-    transition: all .2s ease-in-out;
-}
-
-.social-media-list li:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 50px;
-    line-height: 60px;
-    border-radius: 20%;
-    opacity: 0;
-    transition: all .2s ease-in-out;
-    
-}
-
-i{
+i {
     color: gold;
 }
 
-
-
-.social-media-list li:hover:after {
-    opacity: 1;
-    transform: scale(1.12);
-    transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+form{
+    width: 100%;
 }
 
-.social-media-list li:hover a {
-    color: #000;
-}
 
-.facebook {
-    width: 3rem;
-}
-
-.twitter {
-    width: 3rem;
-}
-
-.instagram {
-    width: 3rem;
-}
 
 .copyright {
     color: #555;
     letter-spacing: 1px;
     text-align: center;
-    margin-left: 3rem;
+    
 }
 
 
-/* Begin Media Queries*/
 @media screen and (max-width: 850px) {
     .contact-wrapper {
         display: flex;
         flex-direction: column;
     }
 
-    .direct-contact-container,
-    .form-horizontal {
-        margin: 0 auto;
-    }
-
-    .direct-contact-container {
-        margin-top: 60px;
-        max-width: 300px;
-    }
-
-    .social-media-list li {
-        height: 60px;
-        width: 60px;
-        line-height: 60px;
-    }
-
-    .social-media-list li:after {
-        width: 60px;
-        height: 60px;
-        line-height: 60px;
+    .btn{
+        width: 100%;
     }
 }
 
 @media screen and (max-width: 569px) {
 
-    .direct-contact-container,
-    .form-wrapper {
-        float: none;
-        margin: 0 auto;
-    }
+   
 
     .form-control,
     textarea {
 
         margin: 0 auto;
-    }
-
-
-    .name,
-    .email,
-    textarea {
-        width: 280px;
-    }
-
-    .direct-contact-container {
-        margin-top: 60px;
-        max-width: 280px;
-    }
-
-    .social-media-list {
-        left: 0;
-    }
-
-    .social-media-list li {
-        height: 55px;
-        width: 55px;
-        line-height: 55px;
-        font-size: 2rem;
-    }
-
-    .social-media-list li:after {
-        width: 55px;
-        height: 55px;
-        line-height: 55px;
     }
 
 }

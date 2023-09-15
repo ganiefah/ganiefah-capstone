@@ -31,6 +31,7 @@
                 aria-label="Close"
               ></button>
             </div>
+            <center>
             <div class="modal-body">
               <input
                 placeholder="Product Name"
@@ -63,6 +64,7 @@
                 required
               />
             </div>
+          </center>
             <div class="modal-footer">
               <button
                 type="button"

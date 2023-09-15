@@ -1,11 +1,11 @@
 <template>
     <div>
         <div class="info">
-       <h1> Welcome to the Sonic Vinyls Help Center</h1>
-       <h4> At Sonic Vinyls, we're passionate about all things vinyl records, and we're committed to making your vinyl shopping experience as smooth as the grooves on your favorite vinyl. Our Help Center is here to assist you with any questions or concerns you may have while exploring our store and enjoying your vinyl journey.</h4>
-    </div>
-    <center>
-      <br>
+        </div>
+        <center>
+          <br>
+          <h1> Welcome to the Sonic Vinyls Help Center</h1>
+        <h4> At Sonic Vinyls, we're passionate about all things vinyl records, and we're committed to making your vinyl shopping experience as smooth as the grooves on your favorite vinyl. Our Help Center is here to assist you with any questions or concerns you may have while exploring our store and enjoying your vinyl journey.</h4>
     <div class="accordion" id="accordionExample">
         <div class="accordion-item">
           <h2 class="accordion-header">
@@ -34,12 +34,36 @@
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Accordion Item #3
+              What is the condition of your vinyl records?
             </button>
           </h2>
           <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              Our vinyls are in the very best shape as we import it from the artist merchandise store and put it on the shelves.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              How do I contact Sonic Vinyls for further assistance?
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              You can leave a query on our contact page or you can look in our footer for our contact information
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              What are your store hours?
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              We are open everyday from 8am to 4pm.
             </div>
           </div>
         </div>
@@ -60,6 +84,7 @@ h4{
     margin-left: 1rem;
     margin-right: 1rem;
     margin-bottom: 1rem;
+    color: black;
 }
 
 .accordion{
@@ -67,8 +92,22 @@ h4{
     
 }
 
+.accordion-button{
+  background-color: beige;
+  color: black;
+}
+
 .info{
   margin-bottom: 2rem;
+  background-image: url(https://i.postimg.cc/P59rSBgT/pexels-andrea-turner-707697.jpg);
+  background-attachment: fixed;
+  height: 75vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1{
+  color: gold;
 }
 
 </style>

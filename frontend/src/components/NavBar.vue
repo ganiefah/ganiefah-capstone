@@ -20,8 +20,8 @@
                   <li class="nav-item">
                     <router-link to="/help">Help</router-link>
                   </li>
-                  <li class="nav-item">
-                    <router-link to="/admin">Admin</router-link>
+                  <li class="nav-item" v-if="user ? user.userRole === 'Admin' : null"  >
+                    <router-link to="/admin" >Admin</router-link>
                   </li>
                   <li class="nav-item">
                     <router-link to="/contact">Contact</router-link>

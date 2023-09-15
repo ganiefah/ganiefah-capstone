@@ -23,7 +23,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="texampleModalLabel3">
-              Modal title
+             Edit User
             </h1>
             <button
               type="button"
@@ -32,6 +32,7 @@
               aria-label="Close"
             ></button>
           </div>
+          <center>
           <div class="modal-body">
             <label>first name:</label>
             <input
@@ -76,6 +77,7 @@
               v-model="editingUser.profileURL"
             />
           </div>
+        </center>
           <div class="modal-footer">
             <button type="button" class="btn" data-bs-dismiss="modal">
               Close
@@ -149,10 +151,12 @@ export default {
 .btn:hover{
 color: green;
 }
+
 input{
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 7px;
 }
+
 </style>

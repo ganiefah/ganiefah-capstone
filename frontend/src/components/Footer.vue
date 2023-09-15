@@ -35,18 +35,18 @@
             </ul>
         </div>
         <hr>
-        <div class="container">
+        <div class="container-fluid">
+          <div class="copyright">
+              <p class="copyright">SONIC VINYLS © ALL RIGHTS RESERVED 2023</p>
+          </div>
             <div class="footer-social-icon">
                 <span>Follow us</span>
                 <br>
-                <a href="https://www.facebook.com/pottersworkCT/" id="media" target="_blank"><img src="https://i.postimg.cc/xj6TkVPw/icons8-facebook-50-1.png" loading="lazy" alt="facebook" class="facebook"></a>
-                <a href="https://www.instagram.com/potterswork/"  id="media" target="_blank"><img src="https://i.postimg.cc/TPbpmNPr/icons8-instagram-50-1.png" loading="lazy" alt="instagram" class="instagram"></a>
-                <a href="https://twitter.com/LaiquahC" target="_blank" id="media"><img src="https://i.postimg.cc/Qd9tGY1R/icons8-twitter-50-1.png" loading="lazy" alt="twitter" class="twitter"></a> <br>
+                <a href="https://www.facebook.com/" id="media" target="_blank"><img src="https://i.postimg.cc/xj6TkVPw/icons8-facebook-50-1.png" loading="lazy" alt="facebook" class="facebook"></a>
+                <a href="https://www.instagram.com/"  id="media" target="_blank"><img src="https://i.postimg.cc/TPbpmNPr/icons8-instagram-50-1.png" loading="lazy" alt="instagram" class="instagram"></a>
+                <a href="https://twitter.com/" target="_blank" id="media"><img src="https://i.postimg.cc/Qd9tGY1R/icons8-twitter-50-1.png" loading="lazy" alt="twitter" class="twitter"></a> <br>
             </div>
-            <div class="copyright">
-                <p class="copyright">SONIC VINYLS © ALL RIGHTS RESERVED 2023</p>
-            </div>
-        </div>
+          </div>
     </div>
 </div>
 
@@ -114,7 +114,7 @@
     justify-content: center !important;
     align-items: center !important;
     text-align: center !important;
-    float: left;
+    width: 100%;
   }
 
  .instagram{
@@ -128,5 +128,7 @@
  .twitter{
   width: 2rem;
  }
+
+ 
   
 </style>

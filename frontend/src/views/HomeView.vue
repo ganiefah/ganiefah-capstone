@@ -13,7 +13,7 @@
           </div>
         </div>
         <div class="carousel-item" data-bs-interval="3000">
-          <img src="https://i.postimg.cc/RVSTWKM9/pexels-andrea-turner-707697.jpg" class="d-block  image w-100" alt="background">
+          <img src="https://i.postimg.cc/RVSTWKM9/pexels-andrea-turner-707697.jpg" loading="lazy" class="d-block  image w-100" alt="background">
           <div class="container">
             <div class="carousel-caption">
               <h1 class="words">Looking For Your Favorite Vinyls?</h1>
@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="carousel-item" data-bs-interval="4000">
-          <img src="https://i.postimg.cc/nzpRF5rY/mike-von-X4d6-DUMapp-U-unsplash.jpg" class="d-block image w-100" alt="background">
+          <img src="https://i.postimg.cc/nzpRF5rY/mike-von-X4d6-DUMapp-U-unsplash.jpg" loading="lazy" class="d-block image w-100" alt="background">
           <div class="container">
             <div class="carousel-caption">
               <h1 class="words">Looking For Some Help?</h1>
@@ -52,13 +52,10 @@
         <div class="card">
           <a href="/products">
         <div class="img-content">
-          <img src="https://i.postimg.cc/jSWvm3f4/portals-removebg-preview.png" alt="">
+          <img src="https://i.postimg.cc/RVpXDczr/the-land-is-inhospitable-and-so-are-we-removebg-preview.png" alt="" loading="lazy"  class="img">
         </div>
         <div class="content">
-          <p class="heading">Vinyls</p>
-          <p class="desc">
-            Welcome to our Best Sellers category, a haven for vinyl enthusiasts and collectors alike. Immerse yourself in a world where classic melodies and contemporary beats come to life in the form of timeless vinyl records.
-          </p>
+          <p class="heading">Best Sellers</p>
         </div>
       </a>
       </div>
@@ -69,13 +66,10 @@
         <div class="card">
           <a href="/products">
         <div class="img-content">
-          <img src="https://i.postimg.cc/dtsPgCJV/born-singer-j-cole-removebg-preview.png" alt="">
+          <img src="https://i.postimg.cc/TPhVWP7r/portals-removebg-preview.png" alt="" loading="lazy" class="record">
         </div>
         <div class="content">
-          <p class="heading">Record Players</p>
-          <p class="desc">
-            Welcome to our In Stock category, a treasure trove for vinyl enthusiasts seeking instant gratification. Here, you'll find a wide and diverse selection of vinyl records that are ready to find a new home in your collection without delay.
-          </p>
+          <p class="heading">Trending</p>
         </div>
       </a>
       </div>
@@ -86,13 +80,10 @@
         <div class="card">
           <a href="/products">
         <div class="img-content">
-          <img src="https://i.postimg.cc/NMkCxN97/England-s-Newest-Hit-Makers-Teal-rolling-stones-removebg-preview.png" alt="">
+          <img src="https://i.postimg.cc/DwYSbPbz/jackman-removebg-preview.png" alt="" loading="lazy" class="img">
         </div>
         <div class="content">
           <p class="heading">Sale Items</p>
-          <p class="desc">
-            Welcome to our Sale Items category, where the enchanting world of vinyl meets unbeatable deals and irresistible offers. Dive into a collection that combines the allure of timeless music with the excitement of remarkable savings.
-          </p>
         </div>
       </a>
       </div>
@@ -119,12 +110,14 @@
   
 }
 
+
 .carousel-item{
   width: 100%;
   height: 90vh;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 
 .info{
   
@@ -281,7 +274,29 @@ img{
     height: auto;
   }
 
-  
 }
+
+@media (max-width:699px) {
+
+ .words {
+  font-size: 0.8rem;
+  text-shadow: none;
+}
+
+.description {
+  font-size: 0.5rem;
+  text-shadow: none;
+}
+
+.btn {
+  padding: 0.1rem;
+  width: 5rem;
+  font-size: 0.5rem;
+  border: none;
+  color: gold;
+}
+
+}
+
 
 </style>

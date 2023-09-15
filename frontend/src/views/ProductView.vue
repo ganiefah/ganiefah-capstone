@@ -9,6 +9,7 @@
               <option value="Best Sellers">Best Seller</option>
               <option value="Trending">Trending</option>
               <option value="Sale">Sale Items</option>
+              <option value="Record Player">Record Players</option>
             </select>           
             <input
             class="form-control mx-auto search"
@@ -27,9 +28,9 @@
         </div>
             <h2 class="class-display2 text-white">Products</h2>
         </div>
-        <div class="row d-flex justify-content-center" v-if="products">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 d-flex justify-content-center" v-if="products">
           <div class="col d-flex justify-content-center" v-for="product of filteredProducts" :key="product.prodID">
-                <div class="card" style="width: 18rem;">
+                <div class="card">
                     <img :src="product.prodURL" class="card-img-top img-fluid" :alt="prodName">
                     <div class="card-body">
                       <h5 class="card-title">{{ product.prodName }} <br> R {{ product.Price }}</h5>
@@ -127,7 +128,7 @@ button{
 }
 
 select{
-  width: 20%;
+  width: 23%;
   height: 2.5rem;
   margin-top: 1rem;
 }

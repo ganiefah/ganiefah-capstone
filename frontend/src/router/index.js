@@ -83,6 +83,7 @@ const routes = [
     path: '/register',
     name: 'register',
     component: () => import( '../views/RegisterView.vue')
+    
   },
   {
     path: '/cart',
@@ -101,8 +102,8 @@ const routes = [
   },
   {
     path: '/checkout',
-    name: 'checkout', 
-    component: () => import( '../views/CheckoutView.vue'),
+    name: 'checkout',
+    component: () => import( '../views/PayView.vue'),
   },
 ]
 
